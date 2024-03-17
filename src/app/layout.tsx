@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-mont tracking-wide">
+      <body className="font-toku tracking-wide">
         <Navbar />
         <ThemeProvider
           attribute="class"

@@ -34,6 +34,7 @@ const config = {
       fontFamily: {
         dancing: ["Dancing Script", "cursive"],
         mont: ["Montserrat", "sans-serif"],
+        toku: ["Kaisei", "serif"],
       },
       height: {
         page: "calc(100vh - 7rem)",
