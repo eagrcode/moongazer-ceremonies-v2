@@ -20,7 +20,7 @@ export default function why() {
               <h2 className="font-dancing text-4xl font-bold">Why Choose a Celebrant?</h2>
               <em className="text-primary/60">explore the benefits</em>
             </div>
-            <div className="flex flex-col max-w-80 sm:flex-row w-full max-w-none gap-4 text-center">
+            <div className="flex flex-col w-full max-w-80 sm:flex-row sm:max-w-none gap-4 text-center">
               <p className="px-4 py-8 rounded-sm flex-1 bg-primary/10">
                 When you choose a celebrant, you have the freedom to hold your ceremony anywhere and
                 at any time
