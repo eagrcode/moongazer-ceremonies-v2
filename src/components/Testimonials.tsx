@@ -8,7 +8,7 @@ import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import ImageGrid from "./ImageGrid";
+import ImageGrid from "./image-grid";
 
 const testimonials = [
   {
@@ -35,32 +35,34 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="flex w-full justify-center px-4 bg-secondary text-primary">
-      <div className="relative flex gap-8 items-center justify-center w-full max-w-screen-md">
-        <Swiper
-          className="items-center"
-          modules={[Autoplay, Pagination]}
-          slidesPerView={1}
-          loop={true}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
-        >
-          {testimonials.map((item) => (
-            <SwiperSlide key={item.id}>
-              <div className="flex flex-col items-center justify-center text-center gap-4 md:text-2xl">
-                <em>
-                  <q>{item.text}</q>
-                </em>
-                <p className="opacity-50">- {item.author}</p>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <div className="flex w-8 absolute bottom-4 right-4">
-          <Image src={Moon} alt={""} style={{ height: "auto", width: "100%" }} />
+    <section className="flex gap-8 w-full justify-center px-4 bg-secondary text-primary">
+      <div className="flex flex-col gap-8 items-center justify-center w-full max-w-screen-lg">
+        <div className="relative flex w-full max-w-screen-md">
+          <Swiper
+            className="items-center"
+            modules={[Autoplay, Pagination]}
+            slidesPerView={1}
+            loop={true}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
+          >
+            {testimonials.map((item) => (
+              <SwiperSlide key={item.id}>
+                <div className="flex flex-col items-center justify-center text-center gap-4 md:text-2xl">
+                  <em>
+                    <q>{item.text}</q>
+                  </em>
+                  <p className="opacity-50">- {item.author}</p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="flex w-8 absolute bottom-4 right-4">
+            <Image src={Moon} alt={""} style={{ height: "auto", width: "100%" }} />
+          </div>
         </div>
-      </div>
 
-      <ImageGrid />
+        <ImageGrid />
+      </div>
     </section>
   );
 }

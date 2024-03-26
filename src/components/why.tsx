@@ -7,10 +7,11 @@ import Jump from "../../public/assets/images/Jump cropped.jpg";
 
 export default function why() {
   return (
-    <section className="flex w-full justify-center px-4 py-28 bg-secondary md:px-12">
+    <section className="flex w-full justify-center px-4 bg-secondary md:px-12">
       <div className="flex flex-col items-center w-full max-w-screen-lg">
         <div className="flex flex-col-reverse items-center gap-16">
           <motion.div
+            viewport={{ once: true }}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 2 }}
@@ -35,13 +36,14 @@ export default function why() {
             </div>
           </motion.div>
           <motion.div
+            viewport={{ once: true }}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 2 }}
-            className="w-full md:min-w-96 self-start rounded-sm"
+            className="w-full md:min-w-96 self-start rounded-sm grayscale"
           >
             <Image
-              className="opacity-90 shadow-md"
+              className="opacity-90 shadow-lg"
               src={Jump}
               alt={"Dee Robinson - Celebrant"}
               style={{ height: "auto", width: "100%" }}

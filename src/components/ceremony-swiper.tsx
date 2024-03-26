@@ -47,12 +47,15 @@ export default function CeremonySwiper() {
       {ceremonies.map((item, index) => (
         <div
           key={index}
-          className="flex flex-col min-w-80 justify-center items-center bg-secondary/10 snap-center rounded-sm"
+          className="flex flex-col min-w-[80%] justify-center items-center snap-center rounded-sm sm:min-w-[70%] md:min-w-[60%] lg:min-w-[40%] xl:min-w-0 xl:[&:nth-child(2)]:mt-28 xl:[&:nth-child(4)]:mt-28"
         >
-          <Image src={item.img} alt={item.alt} />
-          <div className="flex flex-col w-full gap-8 text-center items-center justify-center py-8 border-b-2 border-l-2 border-r-2 border-secondary/10">
+          <div className="flex w-full">
+            <Image src={item.img} alt={item.alt} style={{ height: "auto", width: "100%" }} />
+          </div>
+
+          <div className="flex flex-col w-full gap-8 text-center items-center justify-center py-8  bg-secondary/10 border-b-2 border-l-2 border-r-2 border-secondary/10">
             <h2 className="text-secondary">{item.title}</h2>
-            <Button size="lg" asChild>
+            <Button asChild size="lg">
               <Link href={item.path}>Learn More</Link>
             </Button>
           </div>
