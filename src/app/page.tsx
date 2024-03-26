@@ -2,6 +2,8 @@ import Hero from "@/components/hero";
 import About from "@/components/about";
 import Why from "@/components/why";
 import Ceremonies from "@/components/ceremonies";
+import Planning from "@/components/planning";
+import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   return (
@@ -10,6 +12,8 @@ export default function Home() {
       <About />
       <Why />
       <Ceremonies />
+      <Planning />
+      <Testimonials />
     </main>
   );
 }
