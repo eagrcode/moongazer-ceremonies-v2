@@ -35,7 +35,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="flex gap-8 w-full justify-center px-4 bg-secondary text-primary">
+    <section className="flex gap-8 w-full justify-center bg-secondary text-primary">
       <div className="flex flex-col gap-8 items-center justify-center w-full max-w-screen-lg">
         <div className="relative flex w-full max-w-screen-md">
           <Swiper

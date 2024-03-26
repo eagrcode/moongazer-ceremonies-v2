@@ -7,7 +7,7 @@ import Jump from "../../public/assets/images/Jump cropped.jpg";
 
 export default function why() {
   return (
-    <section className="flex w-full justify-center px-4 bg-secondary md:px-12">
+    <section className="flex w-full justify-center bg-secondary">
       <div className="flex flex-col items-center w-full max-w-screen-lg">
         <div className="flex flex-col-reverse items-center gap-16">
           <motion.div

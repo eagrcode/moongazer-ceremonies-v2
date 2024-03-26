@@ -36,7 +36,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="flex w-full justify-center bg-primary text-secondary px-4 py-12 text-sm">
+    <footer className="flex w-full justify-center bg-primary text-secondary text-sm">
       <div className="flex flex-col gap-4 justify-between w-full max-w-screen-lg">
         <div className="flex justify-between gap-4">
           <div className="flex items-end font-dancing text-secondary text-base font-bold">

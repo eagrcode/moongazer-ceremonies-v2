@@ -4,7 +4,7 @@ import List from "../../public/assets/images/wedding-list.jpg";
 
 export default function Planning() {
   return (
-    <section className="flex w-full justify-center px-4 bg-brand-primary md:pl-12 xl:px-12 text-primary">
+    <section className="flex w-full justify-center bg-brand-primary text-primary">
       <div className="flex flex-col gap-8 items-center w-full max-w-screen-lg md:flex-row-reverse md:items-start">
         <div className="flex w-full max-w-96 opacity-90">
           <Image src={List} alt={"Wedding list"} />
