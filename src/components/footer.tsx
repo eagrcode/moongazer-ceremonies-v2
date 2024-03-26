@@ -5,98 +5,164 @@ import FCC from "../../public/assets/images/fcc-badge.png";
 import Image from "next/image";
 import Hare from "../../public/assets/images/Moon_Black.png";
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "./ui/accordian-footer";
+
 export default function Footer() {
+  const links = {
+    discover: [
+      { path: "/home", title: "Home" },
+      { path: "/blog", title: "Blog" },
+      { path: "/contact", title: "Contact" },
+    ],
+    ceremony: [
+      { path: "/funerals", title: "Funerals" },
+      { path: "/weddings", title: "Weddings" },
+      { path: "/naming", title: "Naming" },
+      { path: "/renewal", title: "Renewal" },
+      { path: "/commitment", title: "Commitment" },
+    ],
+    social: [
+      {
+        path: "",
+        title: "Facebook",
+      },
+      { path: "", title: "Instagram" },
+    ],
+  };
+
   return (
     <footer className="flex w-full justify-center bg-primary text-secondary px-4 py-12 text-sm">
-      <div className="flex justify-between w-full max-w-screen-lg">
-        <div className="flex flex-col">
-          <div className="flex flex-col w-10 opacity-60">
+      <div className="flex flex-col gap-4 justify-between w-full max-w-screen-lg">
+        <div className="flex justify-between gap-4">
+          <div className="flex items-end font-dancing text-secondary text-base font-bold">
+            <p className="text-2xl">MoonGazer Ceremonies</p>
+          </div>
+          <div className="flex flex-col w-8 opacity-60">
             <Image alt="Hare" src={Hare} style={{ height: "auto", width: "100%" }} />
           </div>
-          <div className="font-dancing text-secondary text-base font-bold">
-            <p>MoonGazer</p>
-            <p>Ceremonies</p>
+        </div>
+        <div className="flex flex-col gap-4 md:hidden">
+          <Accordion type="single" collapsible>
+            <AccordionItem value="item-1">
+              <AccordionTrigger>Discover</AccordionTrigger>
+              <AccordionContent asChild>
+                <ul className="flex flex-col justify-center text-sm gap-4 pt-4">
+                  {links.discover.map((link, index) => (
+                    <li key={index}>
+                      <Link href={link.path}>{link.title}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+          <Accordion type="single" collapsible>
+            <AccordionItem value="item-1">
+              <AccordionTrigger>Ceremonies</AccordionTrigger>
+              <AccordionContent asChild>
+                <ul className="flex flex-col justify-center text-sm gap-4 pt-4">
+                  {links.ceremony.map((link, index) => (
+                    <li key={index}>
+                      <Link href={link.path}>{link.title}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+          <Accordion type="single" collapsible>
+            <AccordionItem value="item-1">
+              <AccordionTrigger>Social</AccordionTrigger>
+              <AccordionContent asChild>
+                <ul className="flex flex-col justify-center text-sm gap-4 pt-4">
+                  {links.social.map((link, index) => (
+                    <li key={index}>
+                      <Link href={link.path}>{link.title}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+        <div className="hidden md:flex gap-4 justify-between">
+          <nav>
+            <h4 className="font-bold mb-2">Discover</h4>
+            <ul className="flex flex-col">
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+              <li>
+                <Link href="#ceremoniesTag">Blog</Link>
+              </li>
+              <li>
+                <Link href="/contact">Contact</Link>
+              </li>
+            </ul>
+          </nav>
+          <nav>
+            <h4 className="font-bold mb-2">Ceremonies</h4>
+            <ul className="flex flex-col">
+              <li>
+                <Link href="/funeral">Funerals</Link>
+              </li>
+              <li>
+                <Link href="#ceremoniesTag">Weddings</Link>
+              </li>
+              <li>
+                <Link href="/contact">Naming</Link>
+              </li>
+              <li>
+                <Link href="/contact">Vow Renewal</Link>
+              </li>
+              <li>
+                <Link href="/contact">Commitment</Link>
+              </li>
+            </ul>
+          </nav>
+          <nav>
+            <h4 className="font-bold mb-2">Social</h4>
+            <ul className="flex flex-col">
+              <li>
+                <Link
+                  rel="nofollow"
+                  target="_blank"
+                  href="https://www.facebook.com/moongazerceremonies"
+                  aria-label="link href moongazer ceremonies facebook"
+                >
+                  Facebook
+                </Link>
+              </li>
+              <li>
+                <Link
+                  rel="nofollow"
+                  target="_blank"
+                  href="https://www.instagram.com/moongazerceremonies/"
+                  aria-label="link href moongazer ceremonies instagram"
+                >
+                  Instagram
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div className="flex w-full justify-evenly">
+          <div className="w-12">
+            <Image src={AOIC} alt="AOIC-certification" style={{ height: "auto", width: "100%" }} />
+          </div>
+          <div className="w-24">
+            <Image src={CCL} alt="CCL cert" style={{ height: "auto", width: "100%" }} />
+          </div>
+          <div className="w-12">
+            <Image src={FCC} alt="FCC cert" style={{ height: "auto", width: "100%" }} />
           </div>
         </div>
-        <nav className="footer-navbar">
-          <h4 className="font-bold mb-2">Discover</h4>
-          <ul className="flex flex-col">
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="#ceremoniesTag">Blog</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact</Link>
-            </li>
-          </ul>
-          {/* <div className="footer-social-container">
-            <Link
-              rel="nofollow"
-              target="_blank"
-              href="https://www.instagram.com/moongazerceremonies/"
-              aria-label="link href moongazer ceremonies instagram"
-            ></Link>
-            <Link
-              rel="nofollow"
-              target="_blank"
-              href="https://www.facebook.com/moongazerceremonies"
-              aria-label="link href moongazer ceremonies facebook"
-            ></Link>
-          </div> */}
-        </nav>
-        <nav className="footer-navbar">
-          <h4 className="font-bold mb-2">Ceremonies</h4>
-          <ul className="flex flex-col">
-            <li>
-              <Link href="/funeral">Funerals</Link>
-            </li>
-            <li>
-              <Link href="#ceremoniesTag">Weddings</Link>
-            </li>
-            <li>
-              <Link href="/contact">Naming</Link>
-            </li>
-            <li>
-              <Link href="/contact">Vow Renewal</Link>
-            </li>
-            <li>
-              <Link href="/contact">Commitment</Link>
-            </li>
-          </ul>
-        </nav>
-        <div className="flex flex-col">
-          <h4 className="font-bold mb-2">Social</h4>
-          <ul className="flex flex-col">
-            <li>
-              <Link href={""}>Facebook</Link>
-            </li>
-            <li>
-              <Link href={""}>Instagram</Link>
-            </li>
-          </ul>
-        </div>
-        {/* <div className="bothrefm-footer">
-          <div className="hitched-container">
-            <Link
-              rel="nofollow"
-              target="_blank"
-              href="https://www.hitched.co.uk/wedding-celebrants/moon-gazer-ceremonies_322007.htm"
-              title="Hitched.co.uk"
-            ></Link>
-          </div>
-          <div className="aoic-container">
-            <Image src={AOIC} alt="AOIC-certification" />
-          </div>
-          <div className="hitched-container">
-            <span>Trained by</span>
-            <Image alt="CCL cert" src={CCL} />
-          </div>
-          <div className="fcc-container">
-            <Image alt="FCC cert" src={FCC} />
-          </div>
-        </div> */}
       </div>
     </footer>
   );
