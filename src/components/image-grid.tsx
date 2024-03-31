@@ -28,8 +28,8 @@ const images = [
   },
 ];
 
-const imageElement = images.map((img) => (
-  <div className="rounded-sm border-2 border-brand-primary/20 shadow-md">
+const imageElement = images.map((img, index) => (
+  <div key={index} className="rounded-sm border-2 border-brand-primary/20 shadow-md">
     <Image
       className="rounded-sm grayscale ease-in duration-200 hover:grayscale-0"
       src={img.img}
