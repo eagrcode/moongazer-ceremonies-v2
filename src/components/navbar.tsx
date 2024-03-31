@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import Hare from "../../public/assets/images/Moon_White.png";
+import Hare from "../../public/assets/images/Moon_Black.png";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -55,13 +55,13 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed flex w-full justify-center items-center p-4 bg-primary drop-shadow-sm text-gray-950/60 z-10 md:px-12">
+      <header className="fixed flex w-full justify-center items-center text-base font-medium p-4 bg-primary/70 backdrop-blur-lg drop-shadow-md text-gray-950/70 z-10 md:px-12">
         <div className="flex w-full max-w-5xl justify-between">
           <div className="flex items-center gap-4">
             <div className="hidden md:flex flex-col w-10 opacity-60">
               <Image alt="Hare" src={Hare} style={{ height: "auto", width: "100%" }} />
             </div>
-            <div onClick={() => setShowMobMenu((prev) => !prev)}>
+            <div className="md:hidden" onClick={() => setShowMobMenu((prev) => !prev)}>
               <BiMenuAltLeft size={40} />
             </div>
             <nav className="hidden md:flex">
@@ -99,7 +99,7 @@ export default function Navbar() {
             </nav>
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex gap-4 items-center">
             <Link href={""}>
               <FaInstagram
                 className="hidden ease-in duration-100 hover:text-gray-950 cursor-pointer md:block"
