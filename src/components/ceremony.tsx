@@ -37,8 +37,8 @@ export default function Ceremony({ title, tag, description, included }: PropType
             <h1 className="text-4xl">{title}</h1>
             <em className="text-secondary/80">{tag}</em>
           </div>
-          {description.introduction.map((item) => (
-            <p>{item}</p>
+          {description.introduction.map((item, index) => (
+            <p key={index}>{item}</p>
           ))}
           {description.additionalSections &&
             description.additionalSections.map((detail, index) => (
