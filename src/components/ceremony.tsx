@@ -31,8 +31,8 @@ const Section = ({ title, content }: Sectiontype) => (
 export default function Ceremony({ title, tag, description, included }: PropTypes) {
   return (
     <>
-      <section className="flex w-full justify-center bg-primary text-secondary mt-[72px]">
-        <div className="flex flex-col justify-center items-center text-center max-w-screen-md gap-4">
+      <section className="flex w-full justify-center bg-primary text-secondary">
+        <div className="flex flex-col justify-center items-center text-center max-w-screen-md gap-4 mt-[75px]">
           <div className="flex flex-col gap-2">
             <h1 className="text-4xl">{title}</h1>
             <em className="text-secondary/80">{tag}</em>
