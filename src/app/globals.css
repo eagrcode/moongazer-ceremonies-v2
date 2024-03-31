@@ -1,9 +1,53 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply tracking-wider;
+}
+
+body {
+  @apply text-lg;
+}
+
+section {
+  @apply py-8 px-4 md:py-20 md:px-12;
+}
+
+footer {
+  @apply py-8 px-4 md:py-12 md:px-12;
+}
+
+h1 {
+  @apply font-bold font-dancing;
+}
+
+h2 {
+  @apply font-dancing;
+  @apply text-3xl;
+  @apply font-bold;
+}
+
+h3 {
+  @apply text-xl font-bold;
+}
+
+button {
+  @apply tracking-wider;
+}
+
 a {
-  @apply cursor-pointer; /* This applies the pointer cursor to all <a> tags */
+  @apply cursor-pointer;
+}
+
+img {
+  @apply h-auto;
+  @apply w-full;
+}
+
+.swiper-wrapper {
+  align-items: center;
 }

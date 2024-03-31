@@ -21,6 +21,7 @@ const buttonVariants = cva(
         sm: "h-8 px-3 text-xs",
         lg: "h-12 px-10 font-semibold text-base",
         icon: "h-9 w-9",
+        full: "px-4 py-4 w-full font-semibold bg-brand-light rounded-full text-secondary hover:bg-brand-primary",
       },
     },
     defaultVariants: {

@@ -10,7 +10,7 @@ export default function FuneralPage() {
       ],
       additionalSections: [
         {
-          title: "the Funeral Service",
+          title: "The Funeral Service",
           content: [
             `Initially, we will meet so that I can learn about your loved one to enable me to create the eulogy. I will reflect your family's beliefs and values and capture the unique essence of your loved one.`,
             `My ceremonies are typically non-religious; however, if you choose to include a prayer or hymn, I am more than happy to accommodate your wishes, regardless of denomination or belief system.`,

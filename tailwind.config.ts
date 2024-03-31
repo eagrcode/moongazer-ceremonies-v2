@@ -18,10 +18,10 @@ const config = {
       cyan: colors.cyan,
       brand: {
         primary: "hsl(190, 50%, 55%)",
-        light: "hsl(190 30% 70%)",
+        light: "hsl(190 30% 60%)",
       },
-      primary: "hsl(190, 10%, 90%)",
-      secondary: "hsl(231, 30%, 25%)",
+      primary: "hsl(190, 10%, 92%)",
+      secondary: "hsl(231, 30%, 20%)",
     },
     container: {
       center: true,
@@ -32,9 +32,16 @@ const config = {
     },
     extend: {
       fontFamily: {
+        raleway: ["Raleway", "sans-serif"],
         dancing: ["Dancing Script", "cursive"],
         mont: ["Montserrat", "sans-serif"],
         toku: ["Kaisei", "serif"],
+      },
+      minWidth: {
+        "80%": "80%",
+      },
+      width: {
+        "80%": "80%",
       },
       height: {
         page: "calc(100vh - 7rem)",
@@ -58,7 +65,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("tailwind-scrollbar-hide")],
 } satisfies Config;
 
 export default config;

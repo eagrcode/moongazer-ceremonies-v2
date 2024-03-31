@@ -60,7 +60,7 @@ export default function Ceremony({ title, tag, description, included }: PropType
             {included.map((item, index) => (
               <p
                 key={index}
-                className={`flex items-center justify-center bg-primary/10 px-4 py-4 rounded-full flex-1 font-semibold ${
+                className={`flex items-center justify-center bg-primary/10 px-8 py-8 rounded-xl flex-1 ${
                   index === included.length - 1 && "col-span-2"
                 }`}
               >
