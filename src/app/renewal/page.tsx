@@ -1,14 +1,12 @@
 import Ceremony from "@/components/ceremony";
 
-export default function WeddingPage() {
+export default function RenewalPage() {
   const data = {
-    title: "Weddings",
-    tag: "your day, your choice, your dreams",
+    title: "Vow Renewal",
+    tag: "relive the Love!",
     description: {
       introduction: [
-        `Your ceremony can be held absolutely anywhere you like without the restrictions of a
-      registry office or church. Once the legalities have been completed the sky’s the limit.
-      I can create a ceremony unique to you both, the only limitations are your imagination.`,
+        `This is the perfect way to celebrate your special anniversary and relive your wedding all over again. We can work together to create a personal ceremony either repeating your original vows or making new ones.`,
       ],
     },
     included: [

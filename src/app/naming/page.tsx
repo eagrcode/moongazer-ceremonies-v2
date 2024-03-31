@@ -1,14 +1,12 @@
 import Ceremony from "@/components/ceremony";
 
-export default function WeddingPage() {
+export default function NamingPage() {
   const data = {
-    title: "Weddings",
-    tag: "your day, your choice, your dreams",
+    title: "Naming Ceremony",
+    tag: "what's in a Name?",
     description: {
       introduction: [
-        `Your ceremony can be held absolutely anywhere you like without the restrictions of a
-      registry office or church. Once the legalities have been completed the sky’s the limit.
-      I can create a ceremony unique to you both, the only limitations are your imagination.`,
+        `If you want to celebrate your new arrival with your family and friends, this is the perfect non-religious way to welcome a new member into your family. It might be to welcome a baby into the world or a newly adopted child into your family. We will work together to create a unique ceremony which may include readings and symbolic gestures. You can include godparents, guide parents or guardians who will promise to love and support your child during the ceremony.`,
       ],
     },
     included: [
@@ -16,7 +14,7 @@ export default function WeddingPage() {
       "Symbolic rituals and unique personal aspects can be included",
       "A beautifully presented souvenir script as a keepsake of the day",
       "All meetings, email and phone contact",
-      "Packages from £750",
+      "Packages from £350",
     ],
   };
 
