@@ -16,6 +16,7 @@ const config = {
       gray: colors.gray,
       stone: colors.stone,
       cyan: colors.cyan,
+      red: colors.red,
       brand: {
         primary: "hsl(190, 50%, 55%)",
         light: "hsl(190 30% 60%)",

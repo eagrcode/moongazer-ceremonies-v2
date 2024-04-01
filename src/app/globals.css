@@ -14,7 +14,7 @@ body {
 }
 
 section {
-  @apply py-8 px-4 md:py-20 md:px-12;
+  @apply py-8 px-4 md:py-16 md:px-12;
 }
 
 footer {
@@ -27,7 +27,7 @@ h1 {
 
 h2 {
   @apply font-dancing;
-  @apply text-3xl;
+  @apply text-4xl;
   @apply font-bold;
 }
 
