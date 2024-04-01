@@ -1,11 +1,20 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "./ui/button";
 import List from "../../public/assets/images/wedding-list.jpg";
+import { motion } from "framer-motion";
 
 export default function Planning() {
   return (
     <section className="flex w-full justify-center bg-brand-primary text-primary">
-      <div className="flex flex-col gap-8 items-center w-full max-w-screen-lg md:flex-row-reverse md:items-start">
+      <motion.div
+        viewport={{ once: true }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 2 }}
+        className="flex flex-col gap-8 items-center w-full max-w-screen-lg md:flex-row-reverse md:items-start"
+      >
         <div className="flex w-full max-w-96 opacity-90">
           <Image src={List} alt={"Wedding list"} />
         </div>
@@ -24,7 +33,7 @@ export default function Planning() {
           </p>
           <Button size="lg">Contact Me</Button>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
