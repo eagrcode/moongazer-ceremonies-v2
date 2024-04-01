@@ -133,8 +133,10 @@ export default function ContactForm() {
                   <SelectContent>
                     <SelectGroup>
                       <SelectLabel>Ceremonies</SelectLabel>
-                      {select.map((item) => (
-                        <SelectItem value={item}>{item}</SelectItem>
+                      {select.map((item, index) => (
+                        <SelectItem key={index} value={item}>
+                          {item}
+                        </SelectItem>
                       ))}
                     </SelectGroup>
                   </SelectContent>
