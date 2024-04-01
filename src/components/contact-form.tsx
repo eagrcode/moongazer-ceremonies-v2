@@ -42,6 +42,8 @@ const FormSchema = z.object({
   }),
 });
 
+const select = ["Wedding", "Naming", "Renewal", "Commitment", "Funeral"];
+
 export default function ContactForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -131,9 +133,9 @@ export default function ContactForm() {
                   <SelectContent>
                     <SelectGroup>
                       <SelectLabel>Ceremonies</SelectLabel>
-                      <SelectItem value="wedding">Wedding</SelectItem>
-                      <SelectItem value="renewal">Renewal</SelectItem>
-                      <SelectItem value="naming">Naming</SelectItem>
+                      {select.map((item) => (
+                        <SelectItem value={item}>{item}</SelectItem>
+                      ))}
                     </SelectGroup>
                   </SelectContent>
                 </Select>
