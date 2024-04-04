@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Dee from "../../public/assets/images/dee-robinson-celebrant.png";
+// import Dee from "../../public/assets/images/dee-robinson-celebrant.png";
 import { motion } from "framer-motion";
 import Moon from "../../public/assets/images/Hare_Navy.png";
+import { Dee } from "../lib/s3StaticImages";
 
 export default function about() {
   return (
@@ -21,7 +22,9 @@ export default function about() {
               className="shadow-md"
               src={Dee}
               alt={"Dee Robinson - Celebrant"}
-              style={{ height: "auto", width: "100%" }}
+              style={{ objectFit: "contain" }}
+              width={400}
+              height={400}
             />
           </motion.div>
           <motion.div

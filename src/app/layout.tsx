@@ -8,7 +8,7 @@ import { Toaster } from "@/components/ui/toaster";
 export const metadata: Metadata = {
   title: "MoonGazer Ceremonies",
   description:
-    "Dee Robinson Independent Celebrant - located on the border of Cambridgeshire and Lincolnshire, offering services across Hertfordshire, Bedfordshire, Norfolk, Suffolk, Northamptonshire, Rutland, and Essex.",
+    "Dee Robinson Independent Celebrant - located on the border of Cambridgeshire and Lincolnshire, offering bespoke ceremonies and funerals services across Hertfordshire, Bedfordshire, Norfolk, Suffolk, Northamptonshire, Rutland, and Essex.",
 };
 
 export default function RootLayout({

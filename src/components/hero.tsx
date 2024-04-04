@@ -14,7 +14,7 @@ export default function hero() {
             MoonGazer Ceremonies
           </h1>
           <em className="text-gray-900/70 text-lg max-w-lg">
-            Delivering bespoke solutions for your special day, no matter the occasion
+            where every moment is personalised, and every celebration is unique
           </em>
           <div className="flex gap-4">
             <Button size="lg">GET IN TOUCH</Button>

@@ -38,7 +38,7 @@ export default function FuneralPage() {
           ],
         },
         {
-          title: "Memorial or Celebration of Life Ceremonies",
+          title: "Your own Funeral Wishes",
           content: [
             `Have you ever considered what you would like said at your own funeral?`,
             `Where would you want it to be held? What music would you prefer? Hymns or pop songs? Bagpipes or a rock band? Which readings or poems would you include?`,
