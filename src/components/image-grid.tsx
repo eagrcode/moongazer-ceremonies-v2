@@ -1,9 +1,5 @@
 import Image from "next/image";
-
-import Grid1 from "../../public/assets/images/Grid-1.jpg";
-import Grid2 from "../../public/assets/images/Grid-2.jpg";
-import Grid3 from "../../public/assets/images/Grid-3.jpg";
-import Grid4 from "../../public/assets/images/Grid-4.jpg";
+import { Grid1, Grid2, Grid3, Grid4 } from "@/lib/s3StaticImages";
 
 const images = [
   {
@@ -34,6 +30,9 @@ const imageElement = images.map((img, index) => (
       className="rounded-sm grayscale ease-in duration-200 hover:grayscale-0"
       src={img.img}
       alt={img.alt}
+      width={300}
+      height={300}
+      style={{ objectFit: "contain" }}
     />
   </div>
 ));

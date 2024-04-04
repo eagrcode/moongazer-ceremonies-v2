@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Moon from "../../public/assets/images/Hare_White.png";
-import Jump from "../../public/assets/images/Jump cropped.jpg";
+import { Jump } from "@/lib/s3StaticImages";
 
 export default function why() {
   return (
@@ -45,8 +44,10 @@ export default function why() {
             <Image
               className="opacity-90 shadow-lg"
               src={Jump}
-              alt={"Dee Robinson - Celebrant"}
-              style={{ height: "auto", width: "100%" }}
+              alt={"Groom & best-men jumping"}
+              width={1920}
+              height={1080}
+              style={{ objectFit: "contain" }}
             />
           </motion.div>
         </div>

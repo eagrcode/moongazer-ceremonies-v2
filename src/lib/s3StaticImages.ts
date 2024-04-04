@@ -9,7 +9,7 @@ export const HareHero: urlType = `${baseURL}/Logo_Navy_500.png`;
 
 export const Jump: urlType = `${baseURL}/Jump+cropped.jpg`;
 
-export const Planning: urlType = `${baseURL}/wedding-list.jpg`;
+export const PlanningList: urlType = `${baseURL}/wedding-list.jpg`;
 
 export const Wedding: urlType = `${baseURL}/wedding.jpg`;
 

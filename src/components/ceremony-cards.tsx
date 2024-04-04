@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import Wedding from "../../public/assets/images/wedding.jpg";
 import { Button } from "./ui/button";
+import { Wedding, Funeral, Renewal, Commitment, Naming } from "@/lib/s3StaticImages";
 
 export default function CeremonyCards() {
   const ceremonies = [
@@ -15,28 +15,28 @@ export default function CeremonyCards() {
     {
       id: 2,
       title: "Renewal",
-      img: Wedding,
+      img: Renewal,
       path: "/renewal",
       alt: "renewal",
     },
     {
       id: 3,
       title: "Commitment",
-      img: Wedding,
+      img: Commitment,
       path: "",
       alt: "commitment",
     },
     {
       id: 4,
       title: "Naming",
-      img: Wedding,
+      img: Naming,
       path: "/naming",
       alt: "naming",
     },
     {
       id: 5,
       title: "Funeral",
-      img: Wedding,
+      img: Funeral,
       path: "/funeral",
       alt: "funeral",
     },

@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import Hare from "../../public/assets/images/Moon_Black.png";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -11,6 +10,7 @@ import { FaSquareFacebook } from "react-icons/fa6";
 import { FaChevronDown, FaChevronLeft } from "react-icons/fa";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { IoCloseOutline } from "react-icons/io5";
+import { MoonWhite, MoonBlack } from "@/lib/s3StaticImages";
 
 import {
   DropdownMenu,
@@ -59,7 +59,13 @@ export default function Navbar() {
         <div className="flex w-full max-w-5xl justify-between">
           <div className="flex items-center gap-4">
             <div className="hidden md:flex flex-col w-10 opacity-60">
-              <Image alt="Hare" src={Hare} style={{ height: "auto", width: "100%" }} />
+              <Image
+                alt="Hare"
+                src={MoonBlack}
+                height={50}
+                width={50}
+                style={{ objectFit: "contain" }}
+              />
             </div>
             <div className="md:hidden" onClick={() => setShowMobMenu((prev) => !prev)}>
               <BiMenuAltLeft size={40} />
@@ -126,7 +132,13 @@ export default function Navbar() {
                 <IoCloseOutline size={40} />
               </button>
               <div className="flex w-10 opacity-60">
-                <Image alt="Hare" src={Hare} style={{ height: "auto", width: "100%" }} />
+                <Image
+                  alt="Hare"
+                  src={MoonWhite}
+                  height={50}
+                  width={50}
+                  style={{ objectFit: "contain" }}
+                />
               </div>
             </div>
 

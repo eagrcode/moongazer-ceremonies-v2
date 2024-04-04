@@ -3,7 +3,7 @@ import AOIC from "../../public/assets/images/AOIC-logo.jpg";
 import CCL from "../../public/assets/images/CCL-logo.jpg";
 import FCC from "../../public/assets/images/fcc-badge.png";
 import Image from "next/image";
-import Hare from "../../public/assets/images/Moon_Black.png";
+import { MoonBlack } from "@/lib/s3StaticImages";
 
 import {
   Accordion,
@@ -43,7 +43,13 @@ export default function Footer() {
             <p className="text-2xl">MoonGazer Ceremonies</p>
           </div>
           <div className="flex flex-col w-8 opacity-60">
-            <Image alt="Hare" src={Hare} style={{ height: "auto", width: "100%" }} />
+            <Image
+              alt="Hare"
+              src={MoonBlack}
+              height={50}
+              width={50}
+              style={{ objectFit: "contain" }}
+            />
           </div>
         </div>
         <div className="flex flex-col gap-4 md:hidden">

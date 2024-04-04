@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { Button } from "./ui/button";
-import List from "../../public/assets/images/wedding-list.jpg";
 import { motion } from "framer-motion";
+import { PlanningList } from "@/lib/s3StaticImages";
 
 export default function Planning() {
   return (
@@ -16,7 +16,13 @@ export default function Planning() {
         className="flex flex-col gap-8 items-center w-full max-w-screen-lg md:flex-row-reverse md:items-start"
       >
         <div className="flex w-full max-w-96 opacity-90">
-          <Image src={List} alt={"Wedding list"} />
+          <Image
+            src={PlanningList}
+            alt={"Wedding list"}
+            width={350}
+            height={500}
+            style={{ objectFit: "contain" }}
+          />
         </div>
 
         <div className="flex flex-col gap-4 text-center items-center md:text-left md:items-start">
