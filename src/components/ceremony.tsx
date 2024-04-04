@@ -41,13 +41,6 @@ export default function Ceremony({ title, tag, description, included }: PropType
             <p key={index}>{item}</p>
           ))}
           {description.additionalSections &&
-            description.additionalSections.map((detail, index) => (
-              <>
-                <h3>{detail.title}</h3>
-                <p key={index}>{detail.content}</p>
-              </>
-            ))}
-          {description.additionalSections &&
             description.additionalSections.map((section, index) => (
               <Section key={index} title={section.title} content={section.content} />
             ))}
