@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm as useFormRHF } from "react-hook-form";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
-import sendEmail from "../../lib/sendEmail";
+import sendEmail from "../lib/sendEmail";
 import {
   Form,
   FormControl,
