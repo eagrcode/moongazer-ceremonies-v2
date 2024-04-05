@@ -1,5 +1,11 @@
 import ContactForm from "@/components/contact-form";
+import type { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Contact - MoonGazer Ceremonies",
+  description: "Get in touch to start planning your ceremony.",
+};
 
 export default function ContactPage() {
   return (

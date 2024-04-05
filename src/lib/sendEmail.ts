@@ -17,7 +17,7 @@ export default async function sendEmail(
   try {
     const res = await resend.emails.send({
       from: "MoonGazer Ceremonies Contact Form <onboarding@resend.dev>",
-      to: "elliot.robinson92@gmail.com",
+      to: "moongazerceremonies@gmail.com",
       subject: `New Message from ${data.fullName}`,
       html: `
       <strong>Name: </strong><p>${data.fullName}</p>

@@ -1,4 +1,9 @@
 import Ceremony from "@/components/ceremony";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Wedding - MoonGazer Ceremonies",
+};
 
 export default function WeddingPage() {
   const data = {

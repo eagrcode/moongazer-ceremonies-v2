@@ -1,6 +1,7 @@
 import { Button } from "./ui/button";
 import Image from "next/image";
 import { HareHero } from "@/lib/s3StaticImages";
+import Link from "next/link";
 
 export default function hero() {
   return (
@@ -23,9 +24,11 @@ export default function hero() {
             where every moment is personalised, and every celebration is unique
           </em>
           <div className="flex gap-4">
-            <Button size="lg">GET IN TOUCH</Button>
-            <Button size="lg" variant="secondary">
-              EXPLORE
+            <Button asChild size="lg">
+              <Link href="/contact">GET IN TOUCH</Link>
+            </Button>
+            <Button asChild size="lg" variant="secondary">
+              <a href="#about">EXPLORE</a>
             </Button>
           </div>
         </div>

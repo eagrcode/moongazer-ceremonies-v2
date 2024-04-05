@@ -21,15 +21,15 @@ export default function why() {
               <em className="text-primary/60">explore the benefits</em>
             </div>
             <div className="flex flex-col w-full max-w-80 sm:flex-row sm:max-w-none gap-4 text-center">
-              <p className="px-4 py-8 rounded-sm flex-1 bg-primary/10">
+              <p className="flex justify-center items-center px-4 py-8 rounded-sm flex-1 bg-primary/10">
                 When you choose a celebrant, you have the freedom to hold your ceremony anywhere and
                 at any time
               </p>
-              <p className="px-4 py-8 rounded-sm flex-1 bg-primary/10">
+              <p className="flex justify-center items-center px-4 py-8 rounded-sm flex-1 bg-primary/10">
                 You can choose to include symbolic elements like hand fasting, write your own vows
                 and promises which reflect your personalities
               </p>
-              <p className="px-4 py-8 rounded-sm flex-1 bg-primary/10">
+              <p className="flex justify-center items-center px-4 py-8 rounded-sm flex-1 bg-primary/10">
                 Your celebrant will guide you along the way, making your day as unique as you are
               </p>
             </div>

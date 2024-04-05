@@ -28,7 +28,6 @@ import {
 
 export default function Navbar() {
   const [showMobMenu, setShowMobMenu] = useState<boolean>(false);
-
   const path = usePathname();
 
   const isActive = (href: string) => path === href;
@@ -89,15 +88,17 @@ export default function Navbar() {
                   <DropdownMenuContent>
                     {ceremonyLinks.map((link, index) => (
                       <DropdownMenuItem key={index}>
-                        <Link href={link.href}>{link.title}</Link>
+                        <Link className="w-full" href={link.href}>
+                          {link.title}
+                        </Link>
                       </DropdownMenuItem>
                     ))}
                   </DropdownMenuContent>
                 </DropdownMenu>
                 <li
                   className={`${
-                    isActive("/contact") ? "text-gray-950 underline" : ""
-                  } ease-in duration-100 hover:text-gray-950`}
+                    isActive("/contact") ? "text-gray-950 border-b-2 border-b-gray-950" : ""
+                  } ease-in duration-100 hover:text-gray-950 px-1 flex justify-center items-center`}
                 >
                   <Link href={"/contact"}>CONTACT</Link>
                 </li>
@@ -106,13 +107,13 @@ export default function Navbar() {
           </div>
 
           <div className="flex gap-4 items-center">
-            <Link href={""}>
+            <Link href={"https://www.instagram.com/moongazerceremonies"}>
               <FaInstagram
                 className="hidden ease-in duration-100 hover:text-gray-950 cursor-pointer md:block"
                 size={30}
               />
             </Link>
-            <Link href={""}>
+            <Link href={"https://www.facebook.com/moongazerceremonies"}>
               <FaSquareFacebook
                 className="hidden ease-in duration-100 hover:text-gray-950 cursor-pointer md:block"
                 size={30}
@@ -123,8 +124,8 @@ export default function Navbar() {
         {showMobMenu && (
           <motion.div
             initial={{ x: "-100%" }}
-            animate={{ x: 0 }} // End at the original position, fully visible
-            transition={{ duration: 0.3, ease: "easeIn" }} // Customize the transition
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, ease: "easeIn" }}
             className="md:hidden flex flex-col w-full items-center justify-center absolute h-dvh top-0 p-4 bg-secondary text-primary z-10"
           >
             <div className="flex w-full justify-between absolute top-0 p-4">
@@ -144,7 +145,7 @@ export default function Navbar() {
 
             <nav>
               <ul className="flex flex-col items-center gap-4">
-                <li>
+                <li onClick={() => setShowMobMenu((prev) => !prev)}>
                   <Link href={"/"}>HOME</Link>
                 </li>
                 <li>
@@ -154,7 +155,7 @@ export default function Navbar() {
                       <AccordionContent asChild>
                         <ul className="flex flex-col items-center justify-center text-base text-primary/80 gap-4 pt-4">
                           {ceremonyLinks.map((link, index) => (
-                            <li key={index}>
+                            <li onClick={() => setShowMobMenu((prev) => !prev)} key={index}>
                               <Link href={link.href}>{link.title}</Link>
                             </li>
                           ))}
@@ -164,8 +165,8 @@ export default function Navbar() {
                   </Accordion>
                 </li>
 
-                <li>
-                  <Link href={""}>CONTACT</Link>
+                <li onClick={() => setShowMobMenu((prev) => !prev)}>
+                  <Link href={"/contact"}>CONTACT</Link>
                 </li>
               </ul>
             </nav>

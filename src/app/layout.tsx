@@ -4,6 +4,7 @@ import Navbar from "@/components/navbar";
 import ThemeProvider from "@/components/theme-provider";
 import Footer from "@/components/footer";
 import { Toaster } from "@/components/ui/toaster";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "MoonGazer Ceremonies",
@@ -29,6 +30,7 @@ export default function RootLayout({
           {children}
           <Toaster />
           <Footer />
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

@@ -8,7 +8,7 @@ import { Dee } from "../lib/s3StaticImages";
 
 export default function about() {
   return (
-    <section className="flex w-full justify-center bg-primary">
+    <section id="about" className="flex w-full justify-center bg-primary">
       <div className="flex flex-col items-center w-full max-w-screen-lg">
         <div className="flex flex-col items-center gap-8 md:flex-row">
           <motion.div
