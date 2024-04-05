@@ -1,10 +1,7 @@
 import Link from "next/link";
-import AOIC from "../../public/assets/images/AOIC-logo.jpg";
-import CCL from "../../public/assets/images/CCL-logo.jpg";
-import FCC from "../../public/assets/images/fcc-badge.png";
+import { FCC, AOIC, CCL } from "@/lib/s3StaticImages";
 import Image from "next/image";
 import { MoonBlack } from "@/lib/s3StaticImages";
-
 import {
   Accordion,
   AccordionContent,
@@ -160,13 +157,31 @@ export default function Footer() {
 
         <div className="flex w-full justify-evenly">
           <div className="w-12">
-            <Image src={AOIC} alt="AOIC-certification" style={{ height: "auto", width: "100%" }} />
+            <Image
+              src={AOIC}
+              alt="AOIC certification"
+              height={50}
+              width={50}
+              style={{ objectFit: "contain" }}
+            />
           </div>
           <div className="w-24">
-            <Image src={CCL} alt="CCL cert" style={{ height: "auto", width: "100%" }} />
+            <Image
+              src={CCL}
+              alt="CCL certification"
+              height={50}
+              width={50}
+              style={{ objectFit: "contain" }}
+            />
           </div>
           <div className="w-12">
-            <Image src={FCC} alt="FCC cert" style={{ height: "auto", width: "100%" }} />
+            <Image
+              src={FCC}
+              alt="FCC certification"
+              height={50}
+              width={50}
+              style={{ objectFit: "contain" }}
+            />
           </div>
         </div>
       </div>

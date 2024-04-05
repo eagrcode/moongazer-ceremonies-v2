@@ -3,7 +3,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
-import Moon from "../../public/assets/images/Hare_Navy.png";
+import { HareNavy } from "@/lib/s3StaticImages";
 import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -57,7 +57,13 @@ export default function Testimonials() {
             ))}
           </Swiper>
           <div className="flex w-8 absolute bottom-4 right-4">
-            <Image src={Moon} alt={""} style={{ height: "auto", width: "100%" }} />
+            <Image
+              src={HareNavy}
+              alt={"Hare"}
+              height={50}
+              width={50}
+              style={{ objectFit: "contain" }}
+            />
           </div>
         </div>
 

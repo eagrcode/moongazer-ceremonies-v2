@@ -38,3 +38,9 @@ export const FCC: urlType = `${baseURL}/fcc-badge.png`;
 export const MoonBlack: urlType = `${baseURL}/Moon_Black.png`;
 
 export const MoonWhite: urlType = `${baseURL}/Moon_White.png`;
+
+export const HareNavy: urlType = `${baseURL}/Hare_Navy.png`;
+
+export const HareWhite: urlType = `${baseURL}/Hare_White.png`;
+
+export const HareBlack: urlType = `${baseURL}/Hare_Black.png`;
