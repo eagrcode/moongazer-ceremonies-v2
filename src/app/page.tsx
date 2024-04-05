@@ -3,7 +3,7 @@ import About from "@/components/about";
 import Why from "@/components/why";
 import Ceremonies from "@/components/ceremonies";
 import Planning from "@/components/planning";
-import Testimonials from "@/components/testy";
+import Testimonials from "@/components/testimonial";
 
 export default function Home() {
   return (
