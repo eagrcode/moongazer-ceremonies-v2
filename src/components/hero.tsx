@@ -5,8 +5,8 @@ import Link from "next/link";
 
 export default function hero() {
   return (
-    <div className="flex justify-center w-full bg-primary px-4 md:px-12">
-      <div className="flex flex-col w-full max-w-5xl min-h-svh gap-4 items-center justify-center md:flex-row-reverse">
+    <div className="flex justify-center w-full min-h-screen bg-primary px-4 md:px-12">
+      <div className="flex flex-col w-full max-w-5xl gap-4 items-center justify-center md:flex-row-reverse">
         <div className="flex w-full max-w-64 opacity-80 md:max-w-[450px]">
           <Image
             alt="Hare"
@@ -14,6 +14,7 @@ export default function hero() {
             width={500}
             height={500}
             style={{ objectFit: "contain" }}
+            priority={true}
           />
         </div>
         <div className="flex flex-col gap-4 justify-center items-center text-center md:items-start md:text-left">
