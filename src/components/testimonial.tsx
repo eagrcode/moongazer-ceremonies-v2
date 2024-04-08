@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import ImageGrid from "./image-grid";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -37,7 +38,13 @@ export default function Testimonials() {
   return (
     <section className="flex gap-8 w-full justify-center bg-secondary text-primary">
       <div className="flex flex-col gap-8 items-center justify-center w-full max-w-screen-lg">
-        <div className="relative flex w-full max-w-screen-md">
+        <motion.div
+          viewport={{ once: true }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 2 }}
+          className="relative flex w-full max-w-screen-md"
+        >
           <Swiper
             className="items-center"
             modules={[Autoplay, Pagination]}
@@ -65,7 +72,7 @@ export default function Testimonials() {
               style={{ objectFit: "contain" }}
             />
           </div>
-        </div>
+        </motion.div>
 
         <ImageGrid />
       </div>

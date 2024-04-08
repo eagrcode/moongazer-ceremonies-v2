@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { Wedding, Funeral, Renewal, Commitment, Naming } from "@/lib/s3StaticImages";
+import { motion } from "framer-motion";
 
 export default function CeremonyCards() {
   const ceremonies = [
@@ -23,7 +26,7 @@ export default function CeremonyCards() {
       id: 3,
       title: "Commitment",
       img: Commitment,
-      path: "",
+      path: "/commitment",
       alt: "commitment",
     },
     {
@@ -43,7 +46,13 @@ export default function CeremonyCards() {
   ];
 
   return (
-    <div className="flex flex-col items-center w-full gap-4 text-secondary md:grid grid-cols-6 md:justify-center">
+    <motion.div
+      viewport={{ once: true }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 2 }}
+      className="flex flex-col items-center w-full gap-4 text-secondary md:grid grid-cols-6 md:justify-center"
+    >
       {ceremonies.map((item, index) => (
         <div
           key={index}
@@ -62,13 +71,15 @@ export default function CeremonyCards() {
           </div>
 
           <div className="flex-1 flex flex-col w-full h-full gap-8 text-center items-center justify-center py-8  bg-secondary/10 border-b-2 border-l-2 border-r-2 border-secondary/10">
-            <h2 className="text-secondary">{item.title}</h2>
+            <h3 className="text-secondary">{item.title}</h3>
             <Button asChild size="lg">
-              <Link href={item.path}>Learn More</Link>
+              <Link aria-label={`Learn more about ${item.title} ceremonies`} href={item.path}>
+                Learn More
+              </Link>
             </Button>
           </div>
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 }

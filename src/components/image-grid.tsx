@@ -1,31 +1,41 @@
+"use client";
+
 import Image from "next/image";
 import { Grid1, Grid2, Grid3, Grid4 } from "@/lib/s3StaticImages";
+import { motion } from "framer-motion";
 
 const images = [
   {
     id: 0,
     img: Grid1,
-    alt: "",
+    alt: "barn wedding",
   },
   {
     id: 1,
     img: Grid2,
-    alt: "",
+    alt: "girl & flowers",
   },
   {
     id: 2,
     img: Grid3,
-    alt: "",
+    alt: "mother & baby",
   },
   {
     id: 3,
     img: Grid4,
-    alt: "",
+    alt: "wedding cake",
   },
 ];
 
 const imageElement = images.map((img, index) => (
-  <div key={index} className="rounded-sm border-2 border-brand-primary/20 shadow-md">
+  <motion.div
+    viewport={{ once: true }}
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 2 }}
+    key={index}
+    className="rounded-sm border-2 border-brand-primary/20 shadow-md"
+  >
     <Image
       className="rounded-sm grayscale ease-in duration-200 hover:grayscale-0"
       src={img.img}
@@ -34,7 +44,7 @@ const imageElement = images.map((img, index) => (
       height={300}
       style={{ objectFit: "contain" }}
     />
-  </div>
+  </motion.div>
 ));
 
 export default function ImageGrid() {
