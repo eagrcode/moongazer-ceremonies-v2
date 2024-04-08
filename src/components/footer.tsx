@@ -13,32 +13,53 @@ export default function Footer() {
   const links = {
     discover: [
       { path: "/home", title: "Home" },
-      { path: "/blog", title: "Blog" },
+      // { path: "/blog", title: "Blog" },
       { path: "/contact", title: "Contact" },
     ],
     ceremony: [
-      { path: "/funerals", title: "Funerals" },
-      { path: "/weddings", title: "Weddings" },
+      { path: "/funeral", title: "Funeral" },
+      { path: "/wedding", title: "Wedding" },
       { path: "/naming", title: "Naming" },
       { path: "/renewal", title: "Renewal" },
       { path: "/commitment", title: "Commitment" },
     ],
     social: [
       {
-        path: "",
+        path: "https://www.facebook.com/moongazerceremonies",
         title: "Facebook",
       },
-      { path: "", title: "Instagram" },
+      { path: "https://www.instagram.com/moongazerceremonies", title: "Instagram" },
     ],
   };
+
+  const renderDiscoverLinks = links.discover.map((link, index) => (
+    <li key={index}>
+      <Link aria-label={`Link to ${link.title} page`} href={link.path}>
+        {link.title}
+      </Link>
+    </li>
+  ));
+
+  const renderCeremonyLinks = links.ceremony.map((link, index) => (
+    <li key={index}>
+      <Link aria-label={`Learn more about ${link.title} ceremonies`} href={link.path}>
+        {link.title}
+      </Link>
+    </li>
+  ));
+
+  const renderSocialLinks = links.social.map((link, index) => (
+    <li key={index}>
+      <Link target="_blank" aria-label={`Link to ${link.title} page`} href={link.path}>
+        {link.title}
+      </Link>
+    </li>
+  ));
 
   return (
     <footer className="flex w-full justify-center bg-primary text-secondary text-sm">
       <div className="flex flex-col gap-4 justify-between w-full max-w-screen-lg">
-        <div className="flex justify-between gap-4">
-          <div className="flex items-end font-dancing text-secondary text-base font-bold">
-            <p className="text-2xl">MoonGazer Ceremonies</p>
-          </div>
+        <div className="flex gap-4">
           <div className="flex flex-col w-8 opacity-60">
             <Image
               alt="Hare"
@@ -48,110 +69,59 @@ export default function Footer() {
               style={{ objectFit: "contain" }}
             />
           </div>
+          <div className="flex items-end font-dancing text-secondary text-base font-bold">
+            <p className="text-2xl">MoonGazer Ceremonies</p>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 md:hidden">
-          <Accordion type="single" collapsible>
-            <AccordionItem value="item-1">
-              <AccordionTrigger>Discover</AccordionTrigger>
-              <AccordionContent asChild>
-                <ul className="flex flex-col justify-center text-sm gap-4 pt-4">
-                  {links.discover.map((link, index) => (
-                    <li key={index}>
-                      <Link href={link.path}>{link.title}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-          <Accordion type="single" collapsible>
-            <AccordionItem value="item-1">
-              <AccordionTrigger>Ceremonies</AccordionTrigger>
-              <AccordionContent asChild>
-                <ul className="flex flex-col justify-center text-sm gap-4 pt-4">
-                  {links.ceremony.map((link, index) => (
-                    <li key={index}>
-                      <Link href={link.path}>{link.title}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-          <Accordion type="single" collapsible>
-            <AccordionItem value="item-1">
-              <AccordionTrigger>Social</AccordionTrigger>
-              <AccordionContent asChild>
-                <ul className="flex flex-col justify-center text-sm gap-4 pt-4">
-                  {links.social.map((link, index) => (
-                    <li key={index}>
-                      <Link href={link.path}>{link.title}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+
+        {/* mobile nav */}
+        <div className="md:hidden">
+          <nav className="flex flex-col gap-4">
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>Discover</AccordionTrigger>
+                <AccordionContent asChild>
+                  <ul className="flex flex-col justify-center text-sm gap-4 pt-4">
+                    {renderDiscoverLinks}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>Ceremonies</AccordionTrigger>
+                <AccordionContent asChild>
+                  <ul className="flex flex-col justify-center text-sm gap-4 pt-4">
+                    {renderCeremonyLinks}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>Social</AccordionTrigger>
+                <AccordionContent asChild>
+                  <ul className="flex flex-col justify-center text-sm gap-4 pt-4">
+                    {renderSocialLinks}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </nav>
         </div>
+        {/* desktop nav */}
         <div className="hidden md:flex gap-4 justify-between">
           <nav>
-            <h4 className="font-bold mb-2">Discover</h4>
-            <ul className="flex flex-col">
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="#ceremoniesTag">Blog</Link>
-              </li>
-              <li>
-                <Link href="/contact">Contact</Link>
-              </li>
-            </ul>
+            <h1 className="font-bold mb-2 text-base font-raleway">Discover</h1>
+            <ul className="flex flex-col">{renderDiscoverLinks}</ul>
           </nav>
           <nav>
-            <h4 className="font-bold mb-2">Ceremonies</h4>
-            <ul className="flex flex-col">
-              <li>
-                <Link href="/funeral">Funerals</Link>
-              </li>
-              <li>
-                <Link href="#ceremoniesTag">Weddings</Link>
-              </li>
-              <li>
-                <Link href="/contact">Naming</Link>
-              </li>
-              <li>
-                <Link href="/contact">Vow Renewal</Link>
-              </li>
-              <li>
-                <Link href="/contact">Commitment</Link>
-              </li>
-            </ul>
+            <h1 className="font-bold mb-2 text-base font-raleway">Ceremonies</h1>
+            <ul className="flex flex-col">{renderCeremonyLinks}</ul>
           </nav>
           <nav>
-            <h4 className="font-bold mb-2">Social</h4>
-            <ul className="flex flex-col">
-              <li>
-                <Link
-                  rel="nofollow"
-                  target="_blank"
-                  href="https://www.facebook.com/moongazerceremonies"
-                  aria-label="link href moongazer ceremonies facebook"
-                >
-                  Facebook
-                </Link>
-              </li>
-              <li>
-                <Link
-                  rel="nofollow"
-                  target="_blank"
-                  href="https://www.instagram.com/moongazerceremonies/"
-                  aria-label="link href moongazer ceremonies instagram"
-                >
-                  Instagram
-                </Link>
-              </li>
-            </ul>
+            <h1 className="font-bold mb-2 text-base font-raleway">Social</h1>
+            <ul className="flex flex-col">{renderSocialLinks}</ul>
           </nav>
         </div>
 
