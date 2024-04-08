@@ -33,10 +33,8 @@ const config = {
     },
     extend: {
       fontFamily: {
-        raleway: ["Raleway", "sans-serif"],
-        dancing: ["Dancing Script", "cursive"],
-        mont: ["Montserrat", "sans-serif"],
-        toku: ["Kaisei", "serif"],
+        poppins: ["var(--font-poppins)"],
+        dancing: ["var(--font-dancing)"],
       },
       minWidth: {
         "80%": "80%",
