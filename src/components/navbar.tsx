@@ -54,7 +54,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed flex w-full justify-center items-center text-base font-medium p-4 bg-primary/70 backdrop-blur-lg drop-shadow-md text-gray-950/70 z-10 md:px-12">
+      <header className="fixed flex w-full h-[75px] justify-center items-center text-base font-medium p-4 bg-primary/70 backdrop-blur-lg drop-shadow-md text-gray-950/70 z-10 md:px-12">
         <div className="flex w-full max-w-5xl justify-between">
           <div className="flex items-center gap-4">
             <div className="hidden md:flex flex-col w-10 opacity-60">
@@ -88,7 +88,11 @@ export default function Navbar() {
                   <DropdownMenuContent>
                     {ceremonyLinks.map((link, index) => (
                       <DropdownMenuItem key={index}>
-                        <Link className="w-full" href={link.href}>
+                        <Link
+                          aria-label={`Learn more about ${link.title} ceremonies`}
+                          className="w-full"
+                          href={link.href}
+                        >
                           {link.title}
                         </Link>
                       </DropdownMenuItem>
@@ -107,13 +111,21 @@ export default function Navbar() {
           </div>
 
           <div className="flex gap-4 items-center">
-            <Link href={"https://www.instagram.com/moongazerceremonies"}>
+            <Link
+              aria-label="Link to Instagram page"
+              href={"https://www.instagram.com/moongazerceremonies"}
+              target="_blank"
+            >
               <FaInstagram
                 className="hidden ease-in duration-100 hover:text-gray-950 cursor-pointer md:block"
                 size={30}
               />
             </Link>
-            <Link href={"https://www.facebook.com/moongazerceremonies"}>
+            <Link
+              aria-label="Link to Facebook page"
+              href={"https://www.facebook.com/moongazerceremonies"}
+              target="_blank"
+            >
               <FaSquareFacebook
                 className="hidden ease-in duration-100 hover:text-gray-950 cursor-pointer md:block"
                 size={30}
@@ -156,7 +168,12 @@ export default function Navbar() {
                         <ul className="flex flex-col items-center justify-center text-base text-primary/80 gap-4 pt-4">
                           {ceremonyLinks.map((link, index) => (
                             <li onClick={() => setShowMobMenu((prev) => !prev)} key={index}>
-                              <Link href={link.href}>{link.title}</Link>
+                              <Link
+                                aria-label={`Learn more about ${link.title} ceremonies`}
+                                href={link.href}
+                              >
+                                {link.title}
+                              </Link>
                             </li>
                           ))}
                         </ul>
@@ -164,7 +181,6 @@ export default function Navbar() {
                     </AccordionItem>
                   </Accordion>
                 </li>
-
                 <li onClick={() => setShowMobMenu((prev) => !prev)}>
                   <Link href={"/contact"}>CONTACT</Link>
                 </li>
