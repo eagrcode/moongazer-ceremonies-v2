@@ -5,6 +5,7 @@ import Footer from "@/components/footer";
 import { Toaster } from "@/components/ui/toaster";
 import { Analytics } from "@vercel/analytics/react";
 import { Dancing_Script, Poppins } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "MoonGazer Ceremonies",
@@ -40,6 +41,7 @@ export default function RootLayout({
         <Toaster />
         <Footer />
         <Analytics />
+        <GoogleAnalytics gaId="G-QVJL4WV2LD" />
       </body>
     </html>
   );
