@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FCC, AOIC, CCL } from "@/lib/s3StaticImages";
+import { FCC, GCC, CCL } from "@/lib/s3StaticImages";
 import Image from "next/image";
 import { MoonBlack } from "@/lib/s3StaticImages";
 import {
@@ -128,8 +128,8 @@ export default function Footer() {
         <div className="flex w-full justify-evenly">
           <div className="w-12">
             <Image
-              src={AOIC}
-              alt="AOIC certification"
+              src={GCC}
+              alt="GCC badge"
               height={50}
               width={50}
               style={{ objectFit: "contain" }}

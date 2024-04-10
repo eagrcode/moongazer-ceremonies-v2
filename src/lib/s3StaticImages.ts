@@ -29,7 +29,7 @@ export const Grid3: urlType = `${baseURL}/Grid-3.jpg`;
 
 export const Grid4: urlType = `${baseURL}/Grid-4.jpg`;
 
-export const AOIC: urlType = `${baseURL}/AOIC-logo.jpg`;
+export const GCC: urlType = `${baseURL}/GCC.jpg`;
 
 export const CCL: urlType = `${baseURL}/CCL-logo.jpg`;
 
