@@ -16,7 +16,7 @@ export default async function sendEmail(
 ): Promise<{ success: boolean; message: string }> {
   try {
     const res = await resend.emails.send({
-      from: "MoonGazer Ceremonies Contact Form <onboarding@resend.dev>",
+      from: "MoonGazer Ceremonies <contact@moongazerceremonies.co.uk>",
       to: "moongazerceremonies@gmail.com",
       subject: `New Message from ${data.fullName}`,
       html: `
