@@ -38,18 +38,18 @@ export default function about() {
               <h2 className="font-dancing text-4xl font-bold">About Me</h2>
             </div>
             <p>
-              Although there is no formal requirement for a celebrant to undertake accredited
-              training, it was really important to me, as a lifelong learner, to hone my craft and
-              be able to carry out ceremonies to the absolute best of my ability.
+              I'm passionate about creating unforgettable moments tailored just for you. Whether
+              it's guiding families through honouring their loved ones or bringing wedding dreams to
+              life, I'm here to make it happen. From intimate gatherings to grand celebrations,
+              whether indoors or surrounded by nature's beauty, I'll ensure every detail is just
+              right. With a background in project and event management, I bring organisation and
+              attention to detail to every ceremony.
             </p>
             <p>
-              I want my families and couples to feel that they are in safe hands. I trained with the
-              only OFSTED accredited provider Civil Ceremonies Limited and am fully insured.
-            </p>
-            <p>
-              I only book one ceremony per day, so I will be dedicated just to you and your
-              ceremony. This means that your ceremony can be any day of the week and it can be at
-              any time of the day!
+              When I'm not crafting those special moments, you'll find me exploring the outdoors
+              with my partner in our campervan, enjoying walks, sailing, and live music gigs. If
+              you're planning a celebration or need help with a meaningful eulogy, I'd be honoured
+              to work with you. Let's turn your visions into reality and create memories to cherish.
             </p>
           </motion.div>
         </div>
