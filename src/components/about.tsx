@@ -38,18 +38,18 @@ export default function about() {
               <h2 className="font-dancing text-4xl font-bold">About Me</h2>
             </div>
             <p>
-              I'm passionate about creating unforgettable moments tailored just for you. Whether
+              {`I'm passionate about creating unforgettable moments tailored just for you. Whether
               it's guiding families through honouring their loved ones or bringing wedding dreams to
               life, I'm here to make it happen. From intimate gatherings to grand celebrations,
               whether indoors or surrounded by nature's beauty, I'll ensure every detail is just
               right. With a background in project and event management, I bring organisation and
-              attention to detail to every ceremony.
+              attention to detail to every ceremony.`}
             </p>
             <p>
-              When I'm not crafting those special moments, you'll find me exploring the outdoors
+              {`When I'm not crafting those special moments, you'll find me exploring the outdoors
               with my partner in our campervan, enjoying walks, sailing, and live music gigs. If
               you're planning a celebration or need help with a meaningful eulogy, I'd be honoured
-              to work with you. Let's turn your visions into reality and create memories to cherish.
+              to work with you. Let's turn your visions into reality and create memories to cherish.`}
             </p>
           </motion.div>
         </div>
