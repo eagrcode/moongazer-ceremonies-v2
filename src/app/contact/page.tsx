@@ -5,6 +5,9 @@ import React from "react";
 export const metadata: Metadata = {
   title: "Contact - MoonGazer Ceremonies",
   description: "Get in touch to start planning your ceremony.",
+  alternates: {
+    canonical: "https://moongazerceremonies.co.uk/contact",
+  },
 };
 
 export default function ContactPage() {

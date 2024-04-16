@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Funeral - MoonGazer Ceremonies",
+  alternates: {
+    canonical: "https://moongazerceremonies.co.uk/funeral",
+  },
 };
 
 export default function FuneralPage() {

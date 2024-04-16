@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Renewal - MoonGazer Ceremonies",
+  alternates: {
+    canonical: "https://moongazerceremonies.co.uk/renewal",
+  },
 };
 
 export default function RenewalPage() {
