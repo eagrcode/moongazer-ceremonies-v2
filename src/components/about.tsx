@@ -38,6 +38,12 @@ export default function about() {
               <h2 className="font-dancing text-4xl font-bold">About Me</h2>
             </div>
             <p>
+              Dee Robinson, your trusted independent celebrant for funeral services and bespoke
+              ceremonies in Cambridgeshire and Lincolnshire. Also proudly serving Hertfordshire,
+              Bedfordshire, Norfolk, Suffolk, Northamptonshire, Rutland, and Essex, I specialise in
+              creating dignified and personalised commemorations.
+            </p>
+            <p>
               {`I'm passionate about creating unforgettable moments tailored just for you. Whether
               it's guiding families through honouring their loved ones or bringing wedding dreams to
               life, I'm here to make it happen. From intimate gatherings to grand celebrations,
