@@ -12,7 +12,7 @@ import {
 export default function Footer() {
   const links = {
     discover: [
-      { path: "/home", title: "Home" },
+      { path: "/", title: "Home" },
       // { path: "/blog", title: "Blog" },
       { path: "/contact", title: "Contact" },
     ],
