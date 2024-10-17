@@ -21,7 +21,7 @@ export default function about() {
             <Image
               className="shadow-md"
               src={Dee}
-              alt={"Dee Robinson - Celebrant"}
+              alt={"Dee Robinson - Lincolnshire & Cambridgeshire Funeral Celebrant"}
               style={{ objectFit: "contain" }}
               width={400}
               height={400}
@@ -35,12 +35,10 @@ export default function about() {
             className="flex flex-col gap-4 text-secondary"
           >
             <div className="flex justify-between">
-              <h2 className="font-dancing text-4xl font-bold">About Me</h2>
+              <h2 className="font-dancing text-4xl font-bold">About Dee – Funeral Celebrant Serving Cambridgeshire and Lincolnshire</h2>
             </div>
             <p>
-              Dee Robinson, your trusted independent celebrant for funeral services and bespoke
-              ceremonies in Cambridgeshire and Lincolnshire. Also proudly serving Hertfordshire,
-              Bedfordshire, Norfolk, Suffolk, Northamptonshire, Rutland, and Essex, I specialise in
+              Also proudly serving Hertfordshire, Bedfordshire, Norfolk, Suffolk, Northamptonshire, Rutland, and Essex, I specialise in
               creating dignified and personalised commemorations.
             </p>
             <p>
