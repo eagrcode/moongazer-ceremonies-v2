@@ -28,7 +28,10 @@ export default function Footer() {
         path: "https://www.facebook.com/moongazerceremonies",
         title: "Facebook",
       },
-      { path: "https://www.instagram.com/moongazerceremonies", title: "Instagram" },
+      {
+        path: "https://www.instagram.com/moongazerceremonies",
+        title: "Instagram",
+      },
     ],
   };
 
@@ -42,7 +45,10 @@ export default function Footer() {
 
   const renderCeremonyLinks = links.ceremony.map((link, index) => (
     <li key={index}>
-      <Link aria-label={`Learn more about ${link.title} ceremonies`} href={link.path}>
+      <Link
+        aria-label={`Learn more about ${link.title} ceremonies`}
+        href={link.path}
+      >
         {link.title}
       </Link>
     </li>
@@ -50,7 +56,11 @@ export default function Footer() {
 
   const renderSocialLinks = links.social.map((link, index) => (
     <li key={index}>
-      <Link target="_blank" aria-label={`Link to ${link.title} page`} href={link.path}>
+      <Link
+        target="_blank"
+        aria-label={`Link to ${link.title} page`}
+        href={link.path}
+      >
         {link.title}
       </Link>
     </li>
@@ -59,18 +69,27 @@ export default function Footer() {
   return (
     <footer className="flex w-full justify-center bg-primary text-secondary text-sm">
       <div className="flex flex-col gap-4 justify-between w-full max-w-screen-lg">
-        <div className="flex gap-4">
-          <div className="flex flex-col w-8 opacity-60">
-            <Image
-              alt="Hare"
-              src={MoonBlack}
-              height={50}
-              width={50}
-              style={{ objectFit: "contain" }}
-            />
+        <div className="flex flex-col gap-4 justify-center text-center">
+          <div className="flex gap-4 justify-center">
+            <div className="flex w-8 opacity-60">
+              <Image
+                alt="Hare"
+                src={MoonBlack}
+                height={50}
+                width={50}
+                style={{ objectFit: "contain" }}
+              />
+            </div>
+            <div className="flex items-end font-dancing text-secondary text-base font-bold">
+              <p className="text-2xl">MoonGazer Ceremonies</p>
+            </div>
           </div>
-          <div className="flex items-end font-dancing text-secondary text-base font-bold">
-            <p className="text-2xl">MoonGazer Ceremonies</p>
+          <div className="flex justify-center">
+            <em className="text-center max-w-2xl text-xs">
+              Serving as a funeral celebrant in <strong>Cambridgeshire</strong>,{" "}
+              <strong>Lincolnshire</strong>, and surrounding areas. Proudly
+              offering bespoke, compassionate ceremonies tailored to your needs.
+            </em>
           </div>
         </div>
 
@@ -116,7 +135,9 @@ export default function Footer() {
             <ul className="flex flex-col">{renderDiscoverLinks}</ul>
           </nav>
           <nav>
-            <h1 className="font-bold mb-2 text-base font-raleway">Ceremonies</h1>
+            <h1 className="font-bold mb-2 text-base font-raleway">
+              Ceremonies
+            </h1>
             <ul className="flex flex-col">{renderCeremonyLinks}</ul>
           </nav>
           <nav>
