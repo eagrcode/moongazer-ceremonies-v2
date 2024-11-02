@@ -35,6 +35,8 @@ export const CCL: urlType = `${baseURL}/CCL-logo.jpg`;
 
 export const FCC: urlType = `${baseURL}/fcc-badge.png`;
 
+export const GFB: urlType = `${baseURL}/GFB`;
+
 export const MoonBlack: urlType = `${baseURL}/Moon_Black.png`;
 
 export const MoonWhite: urlType = `${baseURL}/Moon_White.png`;
