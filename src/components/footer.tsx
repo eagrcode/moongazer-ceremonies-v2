@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FCC, GCC, CCL } from "@/lib/s3StaticImages";
+import { FCC, GCC, CCL, GFB } from "@/lib/s3StaticImages";
 import Image from "next/image";
 import { MoonBlack } from "@/lib/s3StaticImages";
 import {
@@ -68,9 +68,9 @@ export default function Footer() {
 
   return (
     <footer className="flex w-full justify-center bg-primary text-secondary text-sm">
-      <div className="flex flex-col gap-4 justify-between w-full max-w-screen-lg">
-        <div className="flex flex-col gap-4 justify-center text-center">
-          <div className="flex gap-4 justify-center">
+      <div className="flex flex-col gap-4 justify-between w-full max-w-screen-lg md:flex-row">
+        <div className="flex flex-col gap-4 justify-center text-center md:w-full">
+          <div className="flex gap-4 justify-center md:justify-start">
             <div className="flex w-8 opacity-60">
               <Image
                 alt="Hare"
@@ -84,12 +84,50 @@ export default function Footer() {
               <p className="text-2xl">MoonGazer Ceremonies</p>
             </div>
           </div>
-          <div className="flex justify-center">
-            <em className="text-center max-w-2xl text-xs">
+          <div className="flex justify-center md:justify-start">
+            <em className="text-center max-w-2xl text-xs md:text-left">
               Serving as a funeral celebrant in <strong>Cambridgeshire</strong>,{" "}
               <strong>Lincolnshire</strong>, and surrounding areas. Proudly
               offering bespoke, compassionate ceremonies tailored to your needs.
             </em>
+          </div>
+          <div className="flex w-full justify-evenly md:justify-start md:gap-4">
+            <div className="w-12">
+              <Image
+                src={GCC}
+                alt="GCC badge"
+                height={50}
+                width={50}
+                style={{ objectFit: "contain" }}
+              />
+            </div>
+            <div className="w-12">
+              <Image
+                src={GFB}
+                alt="As seen on Guides for Brides"
+                height={50}
+                width={50}
+                style={{ objectFit: "contain" }}
+              />
+            </div>
+            <div className="w-24">
+              <Image
+                src={CCL}
+                alt="CCL certification"
+                height={50}
+                width={50}
+                style={{ objectFit: "contain" }}
+              />
+            </div>
+            <div className="w-12">
+              <Image
+                src={FCC}
+                alt="FCC certification"
+                height={50}
+                width={50}
+                style={{ objectFit: "contain" }}
+              />
+            </div>
           </div>
         </div>
 
@@ -128,52 +166,21 @@ export default function Footer() {
             </Accordion>
           </nav>
         </div>
+
         {/* desktop nav */}
-        <div className="hidden md:flex gap-4 justify-between">
+        <div className="hidden md:flex gap-8 justify-between md:w-full md:justify-end text-center">
           <nav>
-            <h1 className="font-bold mb-2 text-base font-raleway">Discover</h1>
+            <h1 className="font-bold mb-2 text-lg font-raleway">Discover</h1>
             <ul className="flex flex-col">{renderDiscoverLinks}</ul>
           </nav>
           <nav>
-            <h1 className="font-bold mb-2 text-base font-raleway">
-              Ceremonies
-            </h1>
+            <h1 className="font-bold mb-2 text-lg font-raleway">Ceremonies</h1>
             <ul className="flex flex-col">{renderCeremonyLinks}</ul>
           </nav>
           <nav>
-            <h1 className="font-bold mb-2 text-base font-raleway">Social</h1>
+            <h1 className="font-bold mb-2 text-lg font-raleway">Social</h1>
             <ul className="flex flex-col">{renderSocialLinks}</ul>
           </nav>
-        </div>
-
-        <div className="flex w-full justify-evenly">
-          <div className="w-12">
-            <Image
-              src={GCC}
-              alt="GCC badge"
-              height={50}
-              width={50}
-              style={{ objectFit: "contain" }}
-            />
-          </div>
-          <div className="w-24">
-            <Image
-              src={CCL}
-              alt="CCL certification"
-              height={50}
-              width={50}
-              style={{ objectFit: "contain" }}
-            />
-          </div>
-          <div className="w-12">
-            <Image
-              src={FCC}
-              alt="FCC certification"
-              height={50}
-              width={50}
-              style={{ objectFit: "contain" }}
-            />
-          </div>
         </div>
       </div>
     </footer>
