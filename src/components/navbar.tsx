@@ -66,14 +66,19 @@ export default function Navbar() {
                 style={{ objectFit: "contain" }}
               />
             </div>
-            <div className="md:hidden" onClick={() => setShowMobMenu((prev) => !prev)}>
+            <div
+              className="md:hidden"
+              onClick={() => setShowMobMenu((prev) => !prev)}
+            >
               <BiMenuAltLeft size={40} />
             </div>
             <nav className="hidden md:flex">
               <ul className="flex items-center gap-4">
                 <li
                   className={`${
-                    isActive("/") ? "text-gray-950 border-b-2 border-b-gray-950" : ""
+                    isActive("/")
+                      ? "text-gray-950 border-b-2 border-b-gray-950"
+                      : ""
                   } ease-in duration-100 hover:text-gray-950 px-1 flex justify-center items-center`}
                 >
                   <Link href={"/"}>HOME</Link>
@@ -101,10 +106,21 @@ export default function Navbar() {
                 </DropdownMenu>
                 <li
                   className={`${
-                    isActive("/contact") ? "text-gray-950 border-b-2 border-b-gray-950" : ""
+                    isActive("/contact")
+                      ? "text-gray-950 border-b-2 border-b-gray-950"
+                      : ""
                   } ease-in duration-100 hover:text-gray-950 px-1 flex justify-center items-center`}
                 >
                   <Link href={"/contact"}>CONTACT</Link>
+                </li>
+                <li
+                  className={`${
+                    isActive("/blog")
+                      ? "text-gray-950 border-b-2 border-b-gray-950"
+                      : ""
+                  } ease-in duration-100 hover:text-gray-950 px-1 flex justify-center items-center`}
+                >
+                  <Link href={"/blog"}>BLOG</Link>
                 </li>
               </ul>
             </nav>
@@ -141,7 +157,10 @@ export default function Navbar() {
             className="md:hidden flex flex-col w-full items-center justify-center absolute h-dvh top-0 p-4 bg-secondary text-primary z-10"
           >
             <div className="flex w-full justify-between absolute top-0 p-4">
-              <button className="text-primary" onClick={() => setShowMobMenu((prev) => !prev)}>
+              <button
+                className="text-primary"
+                onClick={() => setShowMobMenu((prev) => !prev)}
+              >
                 <IoCloseOutline size={40} />
               </button>
               <div className="flex w-10 opacity-60">
@@ -167,7 +186,10 @@ export default function Navbar() {
                       <AccordionContent asChild>
                         <ul className="flex flex-col items-center justify-center text-base text-primary/80 gap-4 pt-4">
                           {ceremonyLinks.map((link, index) => (
-                            <li onClick={() => setShowMobMenu((prev) => !prev)} key={index}>
+                            <li
+                              onClick={() => setShowMobMenu((prev) => !prev)}
+                              key={index}
+                            >
                               <Link
                                 aria-label={`Learn more about ${link.title} ceremonies`}
                                 href={link.href}
