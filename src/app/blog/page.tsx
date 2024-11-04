@@ -1,31 +1,13 @@
+// /app/blog/page.js
+
 import React from "react";
+import { getBlogPosts } from "@/lib/actions/get-posts";
+import { getCategories } from "@/lib/actions/get-categories";
+import BlogList from "@/components/blog-list";
 
-export default async function page() {
-  // Fetch blog posts
-  const response = await fetch("http://localhost:3000/api/get-posts");
-  const data = await response.json();
-  const { rows: posts } = data.posts;
+export default async function BlogPage() {
+  const posts = await getBlogPosts();
+  const categories = await getCategories();
 
-  console.log(posts);
-
-  return (
-    <main className="relative flex w-full flex-col items-center">
-      <section className="mt-[75px]">
-        {posts.map((post: any) => {
-          const formattedDate = new Date(post.created_at).toLocaleDateString(
-            "en-GB"
-          );
-          return (
-            <React.Fragment key={post.id}>
-              <p>{post.title}</p>
-              <p>{formattedDate}</p>
-              {post.content.map((p: any, index: any) => (
-                <p key={index}>{p}</p>
-              ))}
-            </React.Fragment>
-          );
-        })}
-      </section>
-    </main>
-  );
+  return <BlogList posts={posts} categories={categories} />;
 }
