@@ -43,3 +43,11 @@ a {
 img {
   @apply h-auto w-full;
 }
+
+li {
+  @apply list-inside list-disc;
+}
+
+.blog-content h2 {
+  @apply font-poppins font-normal text-2xl;
+}
