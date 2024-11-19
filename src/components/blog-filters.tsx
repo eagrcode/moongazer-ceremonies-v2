@@ -15,5 +15,5 @@ export function ResetFilters({
 }: {
   filterPosts: (id: number) => void;
 }) {
-  return <button onClick={() => filterPosts(0)}>All Posts</button>;
+  return <button onClick={() => filterPosts(0)}>All</button>;
 }
