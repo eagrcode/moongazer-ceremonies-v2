@@ -1,21 +1,19 @@
-"use server";
+import { createClient } from "../supabase/client";
+import { CategoriesDB } from "../types/types";
 
-import { sql } from "@vercel/postgres";
+export const getCategories = async (): Promise<CategoriesDB[]> => {
+  const supabase = createClient();
 
-type Categories = {
-  id: number;
-  name: string;
-};
-
-export const getCategories = async (): Promise<Categories[]> => {
   try {
-    const { rows } = await sql`SELECT * from "category" order by name asc;`;
+    const { data, error } = await supabase.from("categories").select("*");
 
-    console.log("SERVER ACTION: ", rows);
+    if (error) {
+      throw error;
+    }
 
-    return rows as Categories[];
+    console.log(data);
+    return data as CategoriesDB[];
   } catch (error: any) {
-    console.error("Error in getCategories:", error.message);
-    throw error;
+    throw new Error(error.message);
   }
 };

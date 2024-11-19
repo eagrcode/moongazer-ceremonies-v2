@@ -5,6 +5,11 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
+  },
   // compiler: {
   //   removeConsole: process.env.NODE_ENV === "production",
   // },
@@ -15,6 +20,12 @@ const nextConfig = {
         hostname:
           "moongazer-ceremonies-v2-storageda729-staging.s3.eu-west-2.amazonaws.com",
         pathname: "/static-images/*",
+      },
+      {
+        protocol: "https",
+        hostname:
+          "moongazer-ceremonies-v2-storageda729-staging.s3.eu-west-2.amazonaws.com",
+        pathname: "/blog/*",
       },
     ],
   },
