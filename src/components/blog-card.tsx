@@ -1,6 +1,7 @@
 import { _BlogCard } from "@/lib/types/types";
 import Image from "next/image";
 import Link from "next/link";
+import { formatDate } from "@/lib/formatDate";
 
 export default function BlogCard({
   id,
@@ -10,8 +11,6 @@ export default function BlogCard({
   created_at,
   image_url,
 }: _BlogCard) {
-  const formatDate = (date: Date) => new Date(date).toLocaleDateString("en-GB");
-
   return (
     <div key={id} className="flex">
       <Image
@@ -25,7 +24,7 @@ export default function BlogCard({
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-4">
             <h2 className="font-serif font-light text-xl hover:underline">
-              <Link href={""}>{title}</Link>
+              <Link href={`/blog/${id}`}>{title}</Link>
             </h2>
           </div>
           <div>
@@ -35,7 +34,7 @@ export default function BlogCard({
         <div className="flex gap-2 items-center text-xs pt-4 border-t border-gray-400">
           <p>{category}</p>
           {"-"}
-          <p>{formatDate(created_at)}</p>
+          <p>{formatDate(new Date(created_at))}</p>
         </div>
       </div>
     </div>
