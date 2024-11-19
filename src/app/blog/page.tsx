@@ -9,5 +9,9 @@ export default async function BlogPage() {
   const posts = await getBlogPosts();
   const categories = await getCategories();
 
-  return <BlogList posts={posts} categories={categories} />;
+  return (
+    <main className="relative flex w-full flex-col items-center">
+      <BlogList posts={posts} categories={categories} />
+    </main>
+  );
 }

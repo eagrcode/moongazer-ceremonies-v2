@@ -49,61 +49,59 @@ export default function BlogList({ posts, categories }: _BlogList) {
   }, [filteredPosts, sortOption]);
 
   return (
-    <main className="relative flex w-full flex-col items-center">
-      <section className="mt-[75px] flex w-full justify-center bg-primary text-secondary">
-        <div className="flex flex-col gap-4 w-full max-w-screen-lg text-base">
-          {/* Category Filter Buttons */}
-          <div className="flex justify-between items-center">
-            <div className="flex gap-2">
-              <ResetFilters filterPosts={filterPosts} />
-              {"|"}
-              {categories.map((category, index) => (
-                <>
-                  <BlogFilters
-                    key={category.id}
-                    filterPosts={filterPosts}
-                    id={category.id}
-                    name={category.category}
-                  />
-                  {index != categories.length - 1 && "|"}
-                </>
-              ))}
-            </div>
-            <select
-              className="bg-primary border-2 border-gray-800 px-2 py-[2px] rounded-md text-base focus:ring-brand-primary focus:border-brand-primary"
-              name="sort"
-              id="sort-select"
-              onChange={handleSortChange}
-              value={sortOption}
-            >
-              {sortOptions.map((option) => (
-                <option
-                  className="text-base bg-brand-primary/10 text-secondary"
-                  key={option.id}
-                  value={option.id}
-                >
-                  {option.label}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {/* Render Filtered and Sorted Blog Posts */}
-          <div className="flex flex-col gap-4">
-            {sortedBlogPosts.map((post) => (
-              <BlogCard
-                key={post.id}
-                id={post.id}
-                title={post.title}
-                summary={post.summary}
-                category={post.categories.category}
-                created_at={post.created_at}
-                image_url={post.image_url}
-              />
+    <section className="mt-[75px] flex w-full justify-center bg-primary text-secondary">
+      <div className="flex flex-col gap-4 w-full max-w-screen-lg text-base">
+        {/* Category Filter Buttons */}
+        <div className="flex justify-between items-center">
+          <div className="flex gap-2">
+            <ResetFilters filterPosts={filterPosts} />
+            {"|"}
+            {categories.map((category, index) => (
+              <>
+                <BlogFilters
+                  key={category.id}
+                  filterPosts={filterPosts}
+                  id={category.id}
+                  name={category.category}
+                />
+                {index != categories.length - 1 && "|"}
+              </>
             ))}
           </div>
+          <select
+            className="bg-primary border-2 border-gray-800 px-2 py-[2px] rounded-md text-base focus:ring-brand-primary focus:border-brand-primary"
+            name="sort"
+            id="sort-select"
+            onChange={handleSortChange}
+            value={sortOption}
+          >
+            {sortOptions.map((option) => (
+              <option
+                className="text-base bg-brand-primary/10 text-secondary"
+                key={option.id}
+                value={option.id}
+              >
+                {option.label}
+              </option>
+            ))}
+          </select>
         </div>
-      </section>
-    </main>
+
+        {/* Render Filtered and Sorted Blog Posts */}
+        <div className="flex flex-col gap-4">
+          {sortedBlogPosts.map((post) => (
+            <BlogCard
+              key={post.id}
+              id={post.id}
+              title={post.title}
+              summary={post.summary}
+              category={post.categories.category}
+              created_at={post.created_at}
+              image_url={post.image_url}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
