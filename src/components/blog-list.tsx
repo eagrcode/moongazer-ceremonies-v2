@@ -3,28 +3,9 @@
 import React, { useState } from "react";
 import BlogCard from "@/components/blog-card";
 import { BlogFilters, ResetFilters } from "@/components/blog-filters";
+import { _BlogList } from "@/lib/types/types";
 
-type BlogPost = {
-  id: number;
-  title: string;
-  summary: string;
-  category: string;
-  created_at: Date;
-  image_url: string;
-  category_id: number;
-};
-
-type Category = {
-  id: number;
-  name: string;
-};
-
-type BlogListProps = {
-  posts: BlogPost[];
-  categories: Category[];
-};
-
-export default function BlogList({ posts, categories }: BlogListProps) {
+export default function BlogList({ posts, categories }: _BlogList) {
   const [filteredPosts, setFilteredPosts] = useState(posts);
 
   // Filter posts based on category ID
@@ -48,7 +29,7 @@ export default function BlogList({ posts, categories }: BlogListProps) {
                 key={category.id}
                 filterPosts={filterPosts}
                 id={category.id}
-                name={category.name}
+                name={category.category}
               />
             ))}
           </div>
@@ -61,7 +42,7 @@ export default function BlogList({ posts, categories }: BlogListProps) {
                 id={post.id}
                 title={post.title}
                 summary={post.summary}
-                category={post.category}
+                category={post.categories.category}
                 created_at={post.created_at}
                 image_url={post.image_url}
               />

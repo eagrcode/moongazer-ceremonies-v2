@@ -1,14 +1,6 @@
+import { _BlogCard } from "@/lib/types/types";
 import Image from "next/image";
 import Link from "next/link";
-
-type BlogCard = {
-  id: number;
-  title: string;
-  summary: string;
-  category: string;
-  created_at: Date;
-  image_url: string;
-};
 
 export default function BlogCard({
   id,
@@ -17,14 +9,14 @@ export default function BlogCard({
   category,
   created_at,
   image_url,
-}: BlogCard) {
+}: _BlogCard) {
   const formatDate = (date: Date) => new Date(date).toLocaleDateString("en-GB");
 
   return (
     <div key={id} className="flex">
       <Image
         className="flex flex-1 max-h-[300px] bg-cyan-600 justify-center items-center font-bold"
-        src={image_url}
+        src={image_url || ""}
         alt={""}
         height={200}
         width={200}
