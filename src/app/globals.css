@@ -10,8 +10,12 @@ body {
   @apply font-poppins text-lg;
 }
 
+main {
+  @apply h-dvh;
+}
+
 section {
-  @apply py-8 px-4 md:py-16 md:px-12;
+  @apply min-h-section py-8 px-4 md:py-16 md:px-12;
 }
 
 footer {
