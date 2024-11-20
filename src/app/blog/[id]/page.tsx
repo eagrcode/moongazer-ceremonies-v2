@@ -13,7 +13,7 @@ export default async function Page({
   if (!blogPost) {
     return (
       <main className="relative flex w-full flex-col items-center">
-        <section className="mt-[75px] flex w-full justify-center bg-primary text-secondary min-h-[calc(100dvh-75px)]">
+        <section className="mt-[75px] flex w-full justify-center bg-primary text-secondary">
           <p>Oops, the blog post you’re looking for isn’t here.</p>
         </section>
       </main>
@@ -22,7 +22,7 @@ export default async function Page({
 
   return (
     <main className="relative flex w-full flex-col items-center">
-      <section className="mt-[75px] flex w-full justify-center bg-primary text-secondary min-h-[calc(100dvh-75px)]">
+      <section className="mt-[75px] flex w-full justify-center bg-primary text-secondary">
         <BlogPost blogPost={blogPost} />
       </section>
     </main>
