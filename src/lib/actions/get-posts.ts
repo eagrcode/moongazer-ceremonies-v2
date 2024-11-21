@@ -9,6 +9,7 @@ export const getBlogPosts = async (): Promise<SingleBlogPost[]> => {
     const { data, error: dbError } = await supabase
       .from("posts")
       .select("*, categories(category)")
+      .eq("published", true)
       .order("created_at", { ascending: false });
 
     if (dbError) {
