@@ -25,11 +25,10 @@ export default function BlogPost({ blogPost }: { blogPost: SingleBlogPost }) {
         </div>
         <div className="relative flex w-full items-end max-w-[350px]">
           <Image
-            className="rounded-md"
+            className="rounded-md object-contain"
             src={blogPost.image_url || ""}
             alt={""}
             fill
-            objectFit="contain"
           />
         </div>
       </div>
