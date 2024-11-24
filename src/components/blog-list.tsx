@@ -49,46 +49,48 @@ export default function BlogList({ posts, categories }: _BlogList) {
   }, [filteredPosts, sortOption]);
 
   return (
-    <section className="mt-[75px] flex w-full justify-center bg-primary text-secondary">
-      <div className="flex flex-col gap-4 w-full max-w-screen-lg text-base">
+    <section className="mt-[75px] flex w-full justify-center bg-secondary text-primary">
+      <div className="flex flex-col items-center gap-4 w-full max-w-screen-lg text-base">
         {/* Category Filter Buttons */}
-        <div className="flex justify-between items-center">
-          <div className="flex gap-2">
-            <ResetFilters filterPosts={filterPosts} />
-            {"|"}
-            {categories.map((category, index) => (
-              <>
-                <BlogFilters
-                  key={category.id}
-                  filterPosts={filterPosts}
-                  id={category.id}
-                  name={category.category}
-                />
-                {index != categories.length - 1 && "|"}
-              </>
-            ))}
+        <div className="flex gap-2 justify-between w-full items-center">
+          <div className="flex w-full justify-center md:w-fit">
+            <div className="flex gap-2 overflow-x-auto whitespace-nowrap scrollbar-hide">
+              <ResetFilters filterPosts={filterPosts} />
+              {categories.map((category, index) => (
+                <>
+                  <BlogFilters
+                    key={category.id}
+                    filterPosts={filterPosts}
+                    id={category.id}
+                    name={category.category}
+                  />
+                </>
+              ))}
+            </div>
           </div>
-          <select
-            className="bg-primary border-2 border-gray-800 px-2 py-[2px] rounded-md text-base focus:ring-brand-primary focus:border-brand-primary"
-            name="sort"
-            id="sort-select"
-            onChange={handleSortChange}
-            value={sortOption}
-          >
-            {sortOptions.map((option) => (
-              <option
-                className="text-base bg-brand-primary/10 text-secondary"
-                key={option.id}
-                value={option.id}
-              >
-                {option.label}
-              </option>
-            ))}
-          </select>
+          <div className="hidden w-full max-w-[200px] md:flex">
+            <select
+              className="flex w-full bg-secondary border-2 border-primary/10 rounded-2xl text-sm px-2 py-[3px] text-primary focus:border-primary/20 focus:ring-primary/20"
+              name="sort"
+              id="sort-select"
+              onChange={handleSortChange}
+              value={sortOption}
+            >
+              {sortOptions.map((option) => (
+                <option
+                  className="text-base bg-secondary text-primary"
+                  key={option.id}
+                  value={option.id}
+                >
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
 
         {/* Render Filtered and Sorted Blog Posts */}
-        <div className="flex flex-col gap-4">
+        <div className="grid grid-cols-1 w-full gap-8 md:grid-cols-2 lg:grid-cols-3">
           {sortedBlogPosts.map((post) => (
             <BlogCard
               key={post.id}

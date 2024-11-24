@@ -12,31 +12,36 @@ export default function BlogCard({
   image_url,
 }: _BlogCard) {
   return (
-    <div key={id} className="flex">
-      <Image
-        className="flex flex-1 max-h-[300px] bg-cyan-600 justify-center items-center font-bold"
-        src={image_url || ""}
-        alt={""}
-        height={200}
-        width={200}
-      />
-      <div className="flex flex-1 flex-col gap-4 justify-between p-4 border-t-2 border-r-2 border-b-2 border-gray-400">
-        <div className="flex flex-col gap-2">
-          <div className="flex items-center gap-4">
-            <h2 className="font-serif font-light text-xl hover:underline">
-              <Link href={`/blog/${id}`}>{title}</Link>
-            </h2>
-          </div>
-          <div>
-            <p className="text-xs">{summary}</p>
-          </div>
-        </div>
-        <div className="flex gap-2 items-center text-xs pt-4 border-t border-gray-400">
+    <Link
+      className="flex flex-col gap-2 w-full items-center max-w-[400px] bg-primary/5 border-2 border-primary/10 p-2 rounded-md cursor-pointer transition-all md:hover:border-primary/20 md:max-w-[600px] justify-self-center"
+      href={`/blog/${id}`}
+    >
+      <div className="flex w-full">
+        <Image
+          className="rounded-md object-cover"
+          src={image_url || ""}
+          alt={""}
+          height={176}
+          width={250}
+          placeholder="blur"
+          blurDataURL="blur"
+        />
+      </div>
+      <div className="flex flex-col gap-2 justify-between">
+        <div className="flex gap-2 items-center text-xs text-primary/90">
           <p>{category}</p>
           {"-"}
           <p>{formatDate(new Date(created_at))}</p>
         </div>
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center gap-4">
+            <h2 className="font-serif font-semibold text-xl">{title}</h2>
+          </div>
+          <div>
+            <p className="text-sm text-primary/90">{summary}</p>
+          </div>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
