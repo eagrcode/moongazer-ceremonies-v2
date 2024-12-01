@@ -109,7 +109,7 @@ export default function Navbar() {
                     isActive("/contact")
                       ? "text-gray-950 border-b-2 border-b-gray-950"
                       : ""
-                  } ease-in duration-100 hover:text-gray-950 px-1 flex justify-center items-center`}
+                  } ease-in duration-100 hover:text-gray-950 flex justify-center items-center`}
                 >
                   <Link href={"/contact"}>CONTACT</Link>
                 </li>
@@ -202,6 +202,9 @@ export default function Navbar() {
                       </AccordionContent>
                     </AccordionItem>
                   </Accordion>
+                </li>
+                <li onClick={() => setShowMobMenu((prev) => !prev)}>
+                  <Link href={"/blog"}>BLOG</Link>
                 </li>
                 <li onClick={() => setShowMobMenu((prev) => !prev)}>
                   <Link href={"/contact"}>CONTACT</Link>
