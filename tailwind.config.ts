@@ -42,6 +42,9 @@ const config = {
       width: {
         "80%": "80%",
       },
+      minHeight: {
+        section: "calc(100dvh - 75px)",
+      },
       height: {
         page: "calc(100vh - 7rem)",
       },

@@ -10,8 +10,12 @@ body {
   @apply font-poppins text-lg;
 }
 
+main {
+  @apply min-h-dvh;
+}
+
 section {
-  @apply py-8 px-4 md:py-16 md:px-12;
+  @apply min-h-section py-8 px-4 md:py-16 md:px-12;
 }
 
 footer {
@@ -42,4 +46,12 @@ a {
 
 img {
   @apply h-auto w-full;
+}
+
+.blog-content h2 {
+  @apply font-poppins font-normal text-2xl;
+}
+
+.blog-content li {
+  @apply list-inside list-disc;
 }
