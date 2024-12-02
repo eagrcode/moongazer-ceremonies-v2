@@ -57,14 +57,12 @@ export default function BlogList({ posts, categories }: _BlogList) {
             <div className="flex gap-2 overflow-x-auto whitespace-nowrap scrollbar-hide">
               <ResetFilters filterPosts={filterPosts} />
               {categories.map((category, index) => (
-                <>
-                  <BlogFilters
-                    key={category.id}
-                    filterPosts={filterPosts}
-                    id={category.id}
-                    name={category.category}
-                  />
-                </>
+                <BlogFilters
+                  key={category.id}
+                  filterPosts={filterPosts}
+                  id={category.id}
+                  name={category.category}
+                />
               ))}
             </div>
           </div>
@@ -89,10 +87,11 @@ export default function BlogList({ posts, categories }: _BlogList) {
           </div>
         </div>
 
-        {/* Render Filtered and Sorted Blog Posts */}
+        {/* Render filtered and sorted blog posts */}
         <div className="grid grid-cols-1 w-full gap-8 md:grid-cols-2 lg:grid-cols-3">
           {sortedBlogPosts.map((post) => (
             <BlogCard
+              key={post.id}
               id={post.id}
               title={post.title}
               summary={post.summary}
