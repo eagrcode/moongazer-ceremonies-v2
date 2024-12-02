@@ -13,6 +13,7 @@ export default function BlogCard({
 }: _BlogCard) {
   return (
     <Link
+      key={id}
       className="flex flex-col gap-2 w-full items-center max-w-[400px] bg-primary/5 border-2 border-primary/10 p-2 rounded-md cursor-pointer transition-all md:hover:border-primary/20 md:max-w-[600px] justify-self-center"
       href={`/blog/${id}`}
     >

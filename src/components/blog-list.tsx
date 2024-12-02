@@ -93,7 +93,6 @@ export default function BlogList({ posts, categories }: _BlogList) {
         <div className="grid grid-cols-1 w-full gap-8 md:grid-cols-2 lg:grid-cols-3">
           {sortedBlogPosts.map((post) => (
             <BlogCard
-              key={post.id}
               id={post.id}
               title={post.title}
               summary={post.summary}
