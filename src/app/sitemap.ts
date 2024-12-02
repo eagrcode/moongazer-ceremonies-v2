@@ -46,5 +46,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "hourly",
       priority: 1,
     },
+    {
+      url: `${baseURL}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "hourly",
+      priority: 1,
+    },
   ];
 }
