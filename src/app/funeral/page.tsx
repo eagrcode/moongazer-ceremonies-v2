@@ -62,6 +62,7 @@ export default function FuneralPage() {
       "Full Support, help and guidance with all decisions about the ceremony from my professional knowledge",
       "Full bespoke delivery script written to your choices and any elements from my recommendation (poems, readings, quotes, music)",
       "Presentation script given after the funeral",
+      "Scattering of Ashes Ceremony",
     ],
   };
 
