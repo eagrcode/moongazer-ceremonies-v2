@@ -22,7 +22,6 @@ export default function RenewalPage() {
       "Symbolic rituals and unique personal aspects can be included",
       "A beautifully presented souvenir script as a keepsake of the day",
       "All meetings, email and phone contact",
-      "Packages from £300",
     ],
   };
 
