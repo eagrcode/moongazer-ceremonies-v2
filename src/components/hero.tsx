@@ -18,18 +18,19 @@ export default function hero() {
           />
         </div>
         <div className="flex flex-col gap-4 justify-center items-center text-center md:items-start md:text-left">
-          <h1 className="font-dancing text-brand-primary text-7xl drop-shadow-md md:text-8xl lg:text-9xl">
+          <h1 className="font-dancing text-secondary text-7xl drop-shadow-md md:text-8xl lg:text-9xl">
             MoonGazer Ceremonies
           </h1>
-          <em className="text-gray-900/70 text-lg max-w-lg">
-            where every moment is personalised, and every celebration is unique
+          <em className="text-secondary/70 text-md max-w-lg">
+            Personal, heartfelt Funerals & Celebrations across Lincolnshire, Cambridgeshire and
+            beyond
           </em>
           <div className="flex gap-4">
-            <Button asChild size="lg">
-              <Link href="/contact">GET IN TOUCH</Link>
+            <Button asChild size="lg" className="bg-brand-primary w-fit rounded-md">
+              <Link href="/contact">Book a Free Consultation</Link>
             </Button>
-            <Button asChild size="lg" variant="secondary">
-              <a href="#about">EXPLORE</a>
+            <Button asChild size="lg" variant="secondary" className="w-fit rounded-md">
+              <a href="#ceremonies">Explore Ceremonies</a>
             </Button>
           </div>
         </div>
