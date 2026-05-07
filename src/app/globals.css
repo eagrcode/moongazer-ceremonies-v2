@@ -7,16 +7,16 @@ html {
 }
 
 body {
-  @apply font-poppins text-lg;
+  @apply font-poppins text-base;
 }
 
 main {
   @apply min-h-dvh;
 }
 
-section {
-  @apply min-h-section py-8 px-4 md:py-16 md:px-12;
-}
+/* section {
+  @apply px-2;
+} */
 
 footer {
   @apply py-8 px-4 md:py-12 md:px-12;
