@@ -10,6 +10,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import ImageGrid from "./image-grid";
 import { motion } from "framer-motion";
+import { IoIosStar } from "react-icons/io";
+import { FaStar } from "react-icons/fa";
 
 const testimonials = [
   {
@@ -34,47 +36,56 @@ const testimonials = [
   },
 ];
 
+const starsCount = 5;
+
+const renderStars = () => {
+  const stars = [...Array(starsCount)].map((_, index) => (
+    <div key={index} className="flex">
+      <IoIosStar size={25} className="text-primary-brand" />
+    </div>
+  ));
+
+  return stars;
+};
+
 export default function Testimonials() {
   return (
-    <section className="flex gap-8 w-full justify-center bg-secondary text-primary">
-      <div className="flex flex-col gap-8 items-center justify-center w-full max-w-screen-lg">
-        <motion.div
-          viewport={{ once: true }}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 2 }}
-          className="relative flex w-full max-w-screen-md"
-        >
-          <Swiper
-            className="items-center"
-            modules={[Autoplay, Pagination]}
-            slidesPerView={1}
-            loop={true}
-            autoplay={{ delay: 5000, disableOnInteraction: false }}
-          >
-            {testimonials.map((item) => (
-              <SwiperSlide key={item.id}>
-                <div className="flex flex-col items-center justify-center text-center gap-4 md:text-2xl">
-                  <em>
-                    <q>{item.text}</q>
-                  </em>
-                  <p className="opacity-50">- {item.author}</p>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          <div className="flex w-8 absolute bottom-4 right-4">
-            <Image
-              src={HareNavy}
-              alt={"Hare"}
-              height={50}
-              width={50}
-              style={{ objectFit: "contain" }}
-            />
-          </div>
-        </motion.div>
+    <section className="flex gap-8 w-full justify-center bg-brand-primary text-secondary py-[2px]">
+      <div className="flex w-full bg-primary/90 justify-center">
+        <div className="flex flex-col gap-4 items-center justify-center w-full max-w-screen-lg md:p-4">
+          {/* STARS */}
+          <div className="flex gap-4 justify-center text-brand-primary">{renderStars()}</div>
 
-        <ImageGrid />
+          {/* TESTIMONIALS */}
+          <motion.div
+            viewport={{ once: true }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 2 }}
+            className="relative flex w-full max-w-screen-md items-center justify-center"
+          >
+            <Swiper
+              className="items-center justify-center"
+              modules={[Autoplay, Pagination]}
+              slidesPerView={1}
+              loop={true}
+              autoplay={{ delay: 5000, disableOnInteraction: false }}
+            >
+              {testimonials.map((item) => (
+                <SwiperSlide key={item.id} className="flex items-center justify-center">
+                  <div className="flex flex-col items-center justify-between text-center gap-4 md:text-xl h-[200px] md:h-[150px]">
+                    <div className="flex flex-1 items-center">
+                      <em>
+                        <q>{item.text}</q>
+                      </em>
+                    </div>
+                    <p className="opacity-50">- {item.author}</p>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
