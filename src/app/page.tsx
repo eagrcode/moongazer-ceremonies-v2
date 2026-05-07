@@ -5,6 +5,7 @@ import Ceremonies from "@/components/ceremonies";
 import Planning from "@/components/planning";
 import Testimonials from "@/components/testimonial";
 import { Metadata } from "next";
+import MyBackground from "@/components/my-background";
 
 export const metadata: Metadata = {
   title: "MoonGazer Ceremonies",
@@ -19,11 +20,12 @@ export default function Home() {
   return (
     <main className="relative flex w-full flex-col items-center overflow-hidden">
       <Hero />
+      <Testimonials />
       <About />
+      {/* <MyBackground /> */}
       <Why />
       <Ceremonies />
-      <Planning />
-      <Testimonials />
+      {/* <Planning /> */}
     </main>
   );
 }
