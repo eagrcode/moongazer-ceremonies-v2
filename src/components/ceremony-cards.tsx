@@ -8,13 +8,13 @@ import { motion } from "framer-motion";
 
 export default function CeremonyCards() {
   const ceremonies = [
-    {
-      id: 1,
-      title: "Wedding",
-      img: Wedding,
-      path: "/wedding",
-      alt: "wedding",
-    },
+    // {
+    //   id: 1,
+    //   title: "Wedding",
+    //   img: Wedding,
+    //   path: "/wedding",
+    //   alt: "wedding",
+    // },
     {
       id: 2,
       title: "Renewal",
@@ -51,30 +51,29 @@ export default function CeremonyCards() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 2 }}
-      className="flex flex-col items-center w-full gap-4 text-secondary md:grid grid-cols-6 md:justify-center"
+      className="flex flex-col items-center w-full gap-4 text-secondary md:flex-row"
     >
       {ceremonies.map((item, index) => (
         <div
           key={index}
-          className={`flex flex-col w-full max-w-[400px] items-center rounded-sm col-span-2 ${
-            ceremonies.length === 5 && index === 3 && "md:col-start-2 md:col-span-2"
-          } ${ceremonies.length === 5 && index === 4 && "md:col-start-4 md:col-span-2"}`}
+          className={`flex flex-col w-full max-w-[700px] items-center rounded-md shadow-lg ${index % 2 === 0 ? "bg-primary" : "bg-secondary/5"}`}
         >
-          <div className="flex w-full flex-1">
+          <div className="flex w-full flex-1 rounded-tl-md rounded-tr-md overflow-hidden">
             <Image
               src={item.img}
               alt={item.alt}
-              height={200}
-              width={350}
+              height={300}
+              width={450}
               style={{ objectFit: "contain" }}
             />
           </div>
 
-          <div className="flex-1 flex flex-col w-full h-full gap-8 text-center items-center justify-center py-8  bg-secondary/10 border-b-2 border-l-2 border-r-2 border-secondary/10">
+          <div className="flex-1 flex flex-col w-full h-full gap-8 text-center items-center justify-center py-8 px-4 bg-primary/10 rounded-br-md rounded-bl-md shadow-lg">
             <h3 className="text-secondary">{item.title}</h3>
-            <Button asChild size="lg">
+            <p>A ceremony that reflects your love story</p>
+            <Button asChild size="sm" className="bg-brand-primary">
               <Link aria-label={`Learn more about ${item.title} ceremonies`} href={item.path}>
-                Learn More
+                {`Learn More >`}
               </Link>
             </Button>
           </div>
