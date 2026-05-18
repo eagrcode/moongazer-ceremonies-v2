@@ -69,6 +69,9 @@ export default function Navbar() {
             <div className="md:hidden" onClick={() => setShowMobMenu((prev) => !prev)}>
               <BiMenuAltLeft size={40} />
             </div>
+          </div>
+
+          <div className="flex gap-4">
             <nav className="hidden md:flex">
               <ul className="flex items-center gap-4">
                 <li
@@ -76,12 +79,12 @@ export default function Navbar() {
                     isActive("/") ? "text-gray-950 border-b-2 border-b-gray-950" : ""
                   } ease-in duration-100 hover:text-gray-950 px-1 flex justify-center items-center`}
                 >
-                  <Link href={"/"}>HOME</Link>
+                  <Link href={"/"}>Home</Link>
                 </li>
                 <DropdownMenu modal={false}>
                   <DropdownMenuTrigger asChild>
                     <li className="flex items-center gap-1 cursor-pointer ease-in duration-100 hover:text-gray-950">
-                      <button>CEREMONIES</button>
+                      <button>Ceremonies</button>
                       <FaChevronDown className="font-extralight" size={15} />
                     </li>
                   </DropdownMenuTrigger>
@@ -106,28 +109,26 @@ export default function Navbar() {
                       : ""
                   } ease-in duration-100 hover:text-gray-950 flex justify-center items-center`}
                 >
-                  <Link href={"/remedies-rituals"}>REMEDIES & RITUALS</Link>
+                  <Link href={"/remedies-rituals"}>Remedies & Rituals</Link>
                 </li>
                 <li
                   className={`${
                     isActive("/contact") ? "text-gray-950 border-b-2 border-b-gray-950" : ""
                   } ease-in duration-100 hover:text-gray-950 flex justify-center items-center`}
                 >
-                  <Link href={"/contact"}>CONTACT</Link>
+                  <Link href={"/contact"}>Contact</Link>
                 </li>
                 <li
                   className={`${
                     isActive("/blog") ? "text-gray-950 border-b-2 border-b-gray-950" : ""
                   } ease-in duration-100 hover:text-gray-950 px-1 flex justify-center items-center`}
                 >
-                  <Link href={"/blog"}>BLOG</Link>
+                  <Link href={"/blog"}>Blog</Link>
                 </li>
               </ul>
             </nav>
-          </div>
-
-          <div className="flex gap-4 items-center">
-            {/* <Link
+            <div className="flex gap-4 items-center">
+              {/* <Link
               aria-label="Link to Instagram page"
               href={"https://www.instagram.com/moongazerceremonies"}
               target="_blank"
@@ -137,16 +138,17 @@ export default function Navbar() {
                 size={30}
               />
             </Link> */}
-            <Link
-              aria-label="Link to Facebook page"
-              href={"https://www.facebook.com/moongazerceremonies"}
-              target="_blank"
-            >
-              <FaSquareFacebook
-                className="hidden ease-in duration-100 hover:text-gray-950 cursor-pointer md:block"
-                size={30}
-              />
-            </Link>
+              <Link
+                aria-label="Link to Facebook page"
+                href={"https://www.facebook.com/moongazerceremonies"}
+                target="_blank"
+              >
+                <FaSquareFacebook
+                  className="hidden ease-in duration-100 hover:text-gray-950 cursor-pointer md:block"
+                  size={30}
+                />
+              </Link>
+            </div>
           </div>
         </div>
         {showMobMenu && (
