@@ -7,6 +7,12 @@ import Testimonials from "@/components/testimonial";
 import { Metadata } from "next";
 import MyBackground from "@/components/my-background";
 
+import HeroRD from "@/components/redesign/hero-rd";
+import AboutRD from "@/components/redesign/about-rd";
+import WhyRD from "@/components/redesign/why-rd";
+import CeremoniesRD from "@/components/redesign/ceremonies-rd";
+import TestimonialsRD from "@/components/redesign/testimonial-rd";
+
 export const metadata: Metadata = {
   title: "MoonGazer Ceremonies",
   description:
@@ -19,13 +25,11 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="relative flex w-full flex-col items-center overflow-hidden">
-      <Hero />
-      <Testimonials />
-      <About />
-      {/* <MyBackground /> */}
-      <Why />
-      <Ceremonies />
-      {/* <Planning /> */}
+      <HeroRD />
+      <TestimonialsRD />
+      <AboutRD />
+      <WhyRD />
+      <CeremoniesRD />
     </main>
   );
 }

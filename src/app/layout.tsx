@@ -7,6 +7,8 @@ import { Analytics } from "@vercel/analytics/react";
 import { Dancing_Script, Poppins } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
+import FooterRD from "@/components/redesign/footer-rd";
+
 // "Dee Robinson Independent Celebrant - located on the border of Cambridgeshire and Lincolnshire, offering bespoke ceremonies and funeral services across Hertfordshire, Bedfordshire, Norfolk, Suffolk, Northamptonshire, Rutland and Essex.",
 
 const DancingFont = Dancing_Script({
@@ -35,7 +37,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Toaster />
-        <Footer />
+        <FooterRD />
         <Analytics />
         <GoogleAnalytics gaId="G-QVJL4WV2LD" />
       </body>
