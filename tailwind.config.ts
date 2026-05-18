@@ -21,7 +21,8 @@ const config = {
         primary: "hsl(190, 50%, 55%)",
         light: "hsl(190 30% 60%)",
       },
-      primary: "hsl(190, 10%, 92%)",
+      primary: "hsl(60, 3%, 88%)",
+      primary2: "hsl(190, 10%, 92%)", // was hsl(190, 10%, 92%) — slightly warmer, more neutral
       secondary: "hsl(231, 30%, 20%)",
     },
     container: {
