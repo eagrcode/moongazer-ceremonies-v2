@@ -1,10 +1,3 @@
-// src/components/ceremonies.tsx
-// Changes from current:
-//  - "How It Works" no longer a heavy navy pill — sits on the same bg as
-//    the ceremony grid above for visual continuity
-//  - Three DISTINCT icons (chat, pen, spark) replace the three hearts
-//  - Numbered cyan badges + dashed connecting line for journey feel
-//  - Adds a single bottom CTA into /contact
 "use client";
 
 import Link from "next/link";
@@ -73,7 +66,7 @@ export default function Ceremonies() {
           <em>From first conversation to your day</em>
         </motion.div>
 
-        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-8 w-full max-w-4xl">
+        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-8 w-full max-w-4xl z-0">
           {/* Dashed connector behind the badges (desktop only) */}
           <div
             aria-hidden="true"
