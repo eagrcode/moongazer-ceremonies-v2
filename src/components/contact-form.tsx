@@ -36,7 +36,7 @@ const FormSchema = z.object({
     .min(10, { message: "Please describe your request using a minimum of 10 characters" }),
 });
 
-const select = ["Wedding", "Naming", "Renewal", "Commitment", "Funeral"];
+const select = ["Funeral", "Naming", "Renewal", "Commitment"];
 
 export default function ContactForm() {
   const [resetKey, setResetKey] = useState(0);
@@ -53,7 +53,6 @@ export default function ContactForm() {
   });
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
-    console.log(data);
     const res = await sendEmail(data);
 
     if (res.success) {
@@ -98,9 +97,13 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="flex w-full max-w-screen-sm">
+    <div className="flex w-full">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} method="post" className="flex flex-col w-full">
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          method="post"
+          className="flex flex-col w-full gap-4"
+        >
           <FormField
             control={form.control}
             name="fullName"
@@ -108,7 +111,7 @@ export default function ContactForm() {
               <FormItem>
                 <FormLabel>Full name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter your full name" {...field} />
+                  <Input placeholder="Enter your full name" className="rounded-md" {...field} />
                 </FormControl>
                 {error && <FormMessage>{error?.message}</FormMessage>}
               </FormItem>
@@ -121,7 +124,7 @@ export default function ContactForm() {
               <FormItem>
                 <FormLabel>Email address</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter your email address" {...field} />
+                  <Input placeholder="Enter your email address" className="rounded-md" {...field} />
                 </FormControl>
                 <FormMessage>{error?.message}</FormMessage>
               </FormItem>
@@ -139,7 +142,8 @@ export default function ContactForm() {
                   defaultValue={field.value || ""}
                 >
                   <FormControl>
-                    <SelectTrigger>
+                    {/* bg-primary matches Input/Textarea so all fields look the same */}
+                    <SelectTrigger className="bg-primary rounded-md">
                       <SelectValue placeholder="Which ceremony are you enquiring about?" />
                     </SelectTrigger>
                   </FormControl>
@@ -167,7 +171,7 @@ export default function ContactForm() {
                 <FormControl>
                   <Textarea
                     placeholder="Please describe your enquiry"
-                    className="resize-none"
+                    className="resize-none rounded-md"
                     {...field}
                   />
                 </FormControl>
@@ -175,7 +179,12 @@ export default function ContactForm() {
               </FormItem>
             )}
           />
-          <Button className="mt-4 w-full" size="lg" type="submit">
+          {/* Cyan accent CTA — matches the rest of the redesign */}
+          <Button
+            className="mt-4 w-full rounded-lg bg-brand-primary text-primary hover:bg-brand-primary/90"
+            size="lg"
+            type="submit"
+          >
             Submit
           </Button>
         </form>
