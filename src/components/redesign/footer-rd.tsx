@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FCC, GCC, CCL, GFB, MoonBlack } from "@/lib/s3StaticImages";
+import { FCC, GCC, CCL, GFB, MoonBlack, NYLogo } from "@/lib/s3StaticImages";
 import {
   Accordion,
   AccordionContent,
@@ -100,6 +100,15 @@ export default function Footer() {
                 <Image
                   src={FCC}
                   alt="FCC certification"
+                  height={50}
+                  width={50}
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
+              <div className="w-12 bg-primary/95 rounded-md p-1.5 flex items-center justify-center">
+                <Image
+                  src={NYLogo}
+                  alt="Neal's Yard Remedies independent consultant"
                   height={50}
                   width={50}
                   style={{ objectFit: "contain" }}
