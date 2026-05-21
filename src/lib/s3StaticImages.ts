@@ -46,3 +46,11 @@ export const HareNavy: urlType = `${baseURL}/Hare_Navy.png`;
 export const HareWhite: urlType = `${baseURL}/Hare_White.png`;
 
 export const HareBlack: urlType = `${baseURL}/Hare_Black.png`;
+
+export const AromaWorkshop: urlType = `${baseURL}/aroma-workshop.jpg`;
+
+export const Aromatherapy: urlType = `${baseURL}/Aromatherapy.jpg`;
+
+export const NYLogo: urlType = `${baseURL}/Logo.jpg`;
+
+export const Workshop2: urlType = `${baseURL}/workshop-2.jpg`;
