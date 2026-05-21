@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "../../components/ui/button";
-import { HareNavy } from "@/lib/s3StaticImages";
+import { AromaWorkshop, Aromatherapy, Workshop2 } from "@/lib/s3StaticImages";
 import { FaLeaf, FaRegCommentDots } from "react-icons/fa";
 import { GiWaterDrop, GiFlowerPot, GiMoon } from "react-icons/gi";
 import { PiHandHeart } from "react-icons/pi";
@@ -69,65 +69,73 @@ export default function RemediesRitualsPage() {
 
   return (
     <main className="relative flex w-full flex-col items-center bg-primary text-secondary">
-      {/* HERO — editorial 2-col with collage */}
-      <section className="w-full flex justify-center px-4 sm:px-8 md:px-12 lg:px-16 pt-20 md:pt-24 pb-12 md:pb-16">
-        <div className="w-full max-w-screen-xl grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
-          <div className="flex flex-col gap-5 text-center md:text-left order-2 md:order-1">
-            <span className="text-xs uppercase tracking-[0.22em] text-brand-primary font-semibold">
+      {/* HERO — editorial 2-col with image grid */}
+      <section className="w-full flex justify-center px-4 sm:px-8 md:px-12 lg:px-16 pt-20 md:pt-32 pb-12 md:pb-16">
+        <div className="w-full max-w-screen-xl grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="flex flex-col gap-5 text-center lg:text-left order-2 lg:order-1 min-w-0">
+            <span className="text-[11px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.22em] text-brand-primary font-semibold">
               {`Neal's Yard Workshops · South Lincs & Cambridgeshire`}
             </span>
-            <h1 className="font-dancing font-bold text-6xl sm:text-7xl md:text-7xl lg:text-8xl leading-[0.95]">
+            <h1 className="font-dancing font-bold text-5xl sm:text-6xl md:text-7xl xl:text-8xl leading-[0.95] break-words">
               Remedies <span className="text-brand-primary">&</span> Rituals
             </h1>
-            <p className="text-base md:text-lg text-secondary/80 leading-relaxed max-w-lg mx-auto md:mx-0">
+            <p className="text-base md:text-lg text-secondary/80 leading-relaxed max-w-lg mx-auto lg:mx-0">
               {`Small, welcoming Neal's Yard Remedies workshops — calm, practical and sensory sessions that support seasonal wellbeing and simple, everyday self-care.`}
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 mt-2 justify-center md:justify-start">
-              <Button asChild size="lg" className="bg-brand-primary rounded-md w-auto">
+            <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3 mt-2 justify-center lg:justify-start lg:items-stretch xl:items-center">
+              <Button
+                asChild
+                size="lg"
+                className="bg-brand-primary rounded-md w-full sm:w-auto lg:w-full xl:w-auto"
+              >
                 <Link href="/contact">Enquire about a workshop</Link>
               </Button>
-              <Button asChild size="lg" variant="secondary" className="w-auto rounded-md">
+              <Button
+                asChild
+                size="lg"
+                variant="secondary"
+                className="w-full sm:w-auto lg:w-full xl:w-auto rounded-md"
+              >
                 <a
                   href="https://uk.nyrorganic.com/shop/deerobinson"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2"
+                  className="flex items-center justify-center gap-2"
                 >
                   {`Visit Neal's Yard`} <HiArrowRight size={14} />
                 </a>
               </Button>
             </div>
-            <div className="flex flex-wrap gap-x-5 gap-y-2 mt-3 text-xs text-secondary/60 justify-center md:justify-start">
-              {["Hands-on exploration", "No pressure to buy", "Private bookings welcome"].map(
-                (b) => (
-                  <span key={b} className="flex items-center gap-2">
-                    <span className="w-1 h-1 rounded-full bg-brand-primary" />
-                    {b}
-                  </span>
-                ),
-              )}
-            </div>
           </div>
 
-          {/* Mood collage */}
-          <div className="order-1 md:order-2 grid grid-cols-3 grid-rows-2 gap-3 h-72 sm:h-80 md:h-96">
-            <div className="col-span-2 row-span-2 rounded-xl overflow-hidden relative bg-primary2 flex flex-col items-center justify-center gap-2 shadow-sm">
-              <FaLeaf size={56} className="text-secondary/80" />
-              <span className="font-mono text-[10px] uppercase tracking-wider text-secondary/50">
-                Herbs · botanicals
-              </span>
+          {/* Image grid — wide feature + 2 squares */}
+          <div className="order-1 lg:order-2 grid grid-cols-2 gap-3 w-full max-w-md mx-auto lg:max-w-none">
+            <div className="col-span-2 relative aspect-[2/1] rounded-xl overflow-hidden bg-primary2 shadow-sm">
+              <Image
+                src={AromaWorkshop}
+                alt="Aromatherapy workshop in progress"
+                fill
+                sizes="(min-width: 1024px) 45vw, (min-width: 640px) 28rem, 90vw"
+                className="object-cover"
+              />
             </div>
-            <div className="rounded-xl overflow-hidden relative bg-primary2 flex flex-col items-center justify-center gap-2 shadow-sm">
-              <GiWaterDrop size={36} className="text-brand-primary" />
-              <span className="font-mono text-[9px] uppercase tracking-wider text-secondary/50">
-                Oils
-              </span>
+            <div className="relative aspect-square rounded-xl overflow-hidden bg-primary2 shadow-sm">
+              <Image
+                src={Aromatherapy}
+                alt="Essential oils and botanicals"
+                fill
+                sizes="(min-width: 1024px) 22vw, (min-width: 640px) 14rem, 45vw"
+                className="object-cover"
+              />
             </div>
-            <div className="rounded-xl overflow-hidden relative bg-primary2 flex flex-col items-center justify-center gap-2 shadow-sm">
-              <GiMoon size={36} className="text-secondary/80" />
-              <span className="font-mono text-[9px] uppercase tracking-wider text-secondary/50">
-                Rituals
-              </span>
+            <div className="relative aspect-square rounded-xl overflow-hidden bg-primary2 shadow-sm">
+              <Image
+                src={Workshop2}
+                alt="Hands-on workshop session"
+                fill
+                sizes="(min-width: 1024px) 22vw, (min-width: 640px) 14rem, 45vw"
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
@@ -202,29 +210,18 @@ export default function RemediesRitualsPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
             {workshops.map(({ Icon, title, body }, i) => {
-              const dark = i === 0;
               return (
                 <div
                   key={title}
-                  className={`flex flex-col gap-3 p-6 rounded-xl shadow-sm ${
-                    dark ? "bg-secondary text-primary" : "bg-primary2 text-secondary"
-                  }`}
+                  className={`flex flex-col gap-3 p-6 rounded-xl shadow-sm bg-primary2`}
                 >
                   <span
-                    className={`flex items-center justify-center w-10 h-10 rounded-full ${
-                      dark
-                        ? "bg-brand-primary/25 text-brand-primary"
-                        : "bg-brand-primary/15 text-brand-primary"
-                    }`}
+                    className={`flex items-center justify-center w-10 h-10 rounded-full bg-brand-primary/15 text-brand-primary`}
                   >
                     <Icon size={20} />
                   </span>
                   <h3 className="font-poppins font-semibold text-base leading-snug">{title}</h3>
-                  <p
-                    className={`text-sm leading-relaxed ${dark ? "text-primary/70" : "text-secondary/70"}`}
-                  >
-                    {body}
-                  </p>
+                  <p className={`text-sm leading-relaxed text-secondary/70`}>{body}</p>
                 </div>
               );
             })}
