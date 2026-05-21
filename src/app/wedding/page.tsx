@@ -1,4 +1,4 @@
-import Ceremony from "@/components/ceremony";
+import Ceremony from "@/components/ceremony.old";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -24,9 +24,9 @@ export default function WeddingPage() {
       "Symbolic rituals and unique personal aspects can be included",
       "A beautifully presented souvenir script as a keepsake of the day",
       "All meetings, email and phone contact",
-      "Luxury package - £600",
-      "Essential package - £500",
-      "Classic package - £400",
+      "Luxury package",
+      "Essential package",
+      "Classic package",
     ],
   };
 
