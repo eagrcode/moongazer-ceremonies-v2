@@ -69,7 +69,7 @@ export default function FuneralPage() {
 
   return (
     <main className="relative flex w-full flex-col items-center">
-      <Ceremony {...data} isFuneral={true} />
+      <Ceremony {...data} />
     </main>
   );
 }

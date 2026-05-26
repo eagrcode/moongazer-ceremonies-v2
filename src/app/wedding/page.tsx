@@ -1,4 +1,3 @@
-// import Ceremony from "@/components/ceremony.old";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

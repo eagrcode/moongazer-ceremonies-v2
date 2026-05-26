@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import { HareWhite } from "@/lib/s3StaticImages";
 import { FaCheck } from "react-icons/fa";
-import { HiMail, HiPhone } from "react-icons/hi";
 
 type PriceItem = {
   label: string;
@@ -23,7 +22,6 @@ type PropTypes = {
   included: string[];
   pricing: PriceItem[];
   ctaCopy?: string;
-  isFuneral?: boolean;
 };
 
 const Section = ({ title, content }: { title: string; content: string[] }) => (
