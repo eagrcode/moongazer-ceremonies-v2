@@ -7,10 +7,11 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { FaInstagram } from "react-icons/fa";
 import { FaSquareFacebook } from "react-icons/fa6";
-import { FaChevronDown, FaChevronLeft } from "react-icons/fa";
+import { FaChevronDown } from "react-icons/fa";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { IoCloseOutline } from "react-icons/io5";
 import { MoonWhite, MoonBlack } from "@/lib/s3StaticImages";
+import { ceremonyLinks } from "@/lib/site-links";
 
 import {
   DropdownMenu,
@@ -31,14 +32,6 @@ export default function Navbar() {
   const path = usePathname();
 
   const isActive = (href: string) => path === href;
-
-  const ceremonyLinks = [
-    // { id: 0, title: "Wedding", href: "/wedding" },
-    { id: 1, title: "Renewal", href: "/renewal" },
-    { id: 2, title: "Commitment", href: "/commitment" },
-    { id: 3, title: "Naming", href: "/naming" },
-    { id: 4, title: "Funeral", href: "/funeral" },
-  ];
 
   useEffect(() => {
     if (showMobMenu) {
@@ -89,12 +82,12 @@ export default function Navbar() {
                     </li>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
-                    {ceremonyLinks.map((link, index) => (
-                      <DropdownMenuItem key={index}>
+                    {ceremonyLinks.map((link) => (
+                      <DropdownMenuItem key={link.href}>
                         <Link
                           aria-label={`Learn more about ${link.title} ceremonies`}
-                          className="w-full"
                           href={link.href}
+                          className="w-full"
                         >
                           {link.title}
                         </Link>
@@ -184,8 +177,8 @@ export default function Navbar() {
                       <AccordionTrigger>CEREMONIES</AccordionTrigger>
                       <AccordionContent asChild>
                         <ul className="flex flex-col items-center justify-center text-base text-primary/80 gap-4 pt-4">
-                          {ceremonyLinks.map((link, index) => (
-                            <li onClick={() => setShowMobMenu((prev) => !prev)} key={index}>
+                          {ceremonyLinks.map((link) => (
+                            <li onClick={() => setShowMobMenu((prev) => !prev)} key={link.href}>
                               <Link
                                 aria-label={`Learn more about ${link.title} ceremonies`}
                                 href={link.href}
