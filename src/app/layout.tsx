@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import { Toaster } from "@/components/ui/toaster";
 import { Analytics } from "@vercel/analytics/react";
 import { Dancing_Script, Poppins } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
-import FooterRD from "@/components/redesign/footer-rd";
+import Footer from "@/components/footer";
 
 // "Dee Robinson Independent Celebrant - located on the border of Cambridgeshire and Lincolnshire, offering bespoke ceremonies and funeral services across Hertfordshire, Bedfordshire, Norfolk, Suffolk, Northamptonshire, Rutland and Essex.",
 
@@ -37,7 +36,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Toaster />
-        <FooterRD />
+        <Footer />
         <Analytics />
         <GoogleAnalytics gaId="G-QVJL4WV2LD" />
       </body>

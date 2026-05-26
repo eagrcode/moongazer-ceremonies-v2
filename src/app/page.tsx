@@ -1,17 +1,10 @@
+import { Metadata } from "next";
+
 import Hero from "@/components/hero";
 import About from "@/components/about";
 import Why from "@/components/why";
 import Ceremonies from "@/components/ceremonies";
-import Planning from "@/components/planning";
 import Testimonials from "@/components/testimonial";
-import { Metadata } from "next";
-import MyBackground from "@/components/my-background";
-
-import HeroRD from "@/components/redesign/hero-rd";
-import AboutRD from "@/components/redesign/about-rd";
-import WhyRD from "@/components/redesign/why-rd";
-import CeremoniesRD from "@/components/redesign/ceremonies-rd";
-import TestimonialsRD from "@/components/redesign/testimonial-rd";
 
 export const metadata: Metadata = {
   title: "MoonGazer Ceremonies",
@@ -25,11 +18,11 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="relative flex w-full flex-col items-center overflow-hidden">
-      <HeroRD />
-      <TestimonialsRD />
-      <AboutRD />
-      <WhyRD />
-      <CeremoniesRD />
+      <Hero />
+      <Testimonials />
+      <About />
+      <Why />
+      <Ceremonies />
     </main>
   );
 }

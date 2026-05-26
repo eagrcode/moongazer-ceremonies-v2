@@ -2,80 +2,48 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "./ui/button";
-import { Wedding, Funeral, Renewal, Commitment, Naming } from "@/lib/s3StaticImages";
+import { ceremonyCards } from "@/lib/site-links";
 import { motion } from "framer-motion";
 
 export default function CeremonyCards() {
-  const ceremonies = [
-    // {
-    //   id: 1,
-    //   title: "Wedding",
-    //   img: Wedding,
-    //   path: "/wedding",
-    //   alt: "wedding",
-    // },
-    {
-      id: 2,
-      title: "Renewal",
-      img: Renewal,
-      path: "/renewal",
-      alt: "renewal",
-    },
-    {
-      id: 3,
-      title: "Commitment",
-      img: Commitment,
-      path: "/commitment",
-      alt: "commitment",
-    },
-    {
-      id: 4,
-      title: "Naming",
-      img: Naming,
-      path: "/naming",
-      alt: "naming",
-    },
-    {
-      id: 5,
-      title: "Funeral",
-      img: Funeral,
-      path: "/funeral",
-      alt: "funeral",
-    },
-  ];
-
   return (
     <motion.div
       viewport={{ once: true }}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 2 }}
-      className="flex flex-col items-center w-full gap-4 text-secondary md:flex-row"
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full text-secondary"
     >
-      {ceremonies.map((item, index) => (
+      {ceremonyCards.map((item) => (
         <div
-          key={index}
-          className={`flex flex-col w-full max-w-[700px] items-center rounded-md shadow-lg ${index % 2 === 0 ? "bg-primary" : "bg-secondary/5"}`}
+          key={item.href}
+          className="flex flex-col w-full rounded-md shadow-md bg-primary overflow-hidden border border-secondary/10"
         >
-          <div className="flex w-full flex-1 rounded-tl-md rounded-tr-md overflow-hidden">
+          <div className="flex w-full aspect-[4/3] overflow-hidden">
             <Image
               src={item.img}
               alt={item.alt}
               height={300}
               width={450}
-              style={{ objectFit: "contain" }}
+              style={{ objectFit: "cover", width: "100%", height: "100%" }}
             />
           </div>
 
-          <div className="flex-1 flex flex-col w-full h-full gap-8 text-center items-center justify-center py-8 px-4 bg-primary/10 rounded-br-md rounded-bl-md shadow-lg">
-            <h3 className="text-secondary">{item.title}</h3>
-            <p>A ceremony that reflects your love story</p>
-            <Button asChild size="sm" className="bg-brand-primary">
-              <Link aria-label={`Learn more about ${item.title} ceremonies`} href={item.path}>
-                {`Learn More >`}
-              </Link>
-            </Button>
+          <div className="flex flex-col gap-2 p-5 md:p-6 bg-primary/10">
+            <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-brand-primary font-semibold">
+              {item.from}
+            </span>
+            <h3 className="text-secondary font-dancing text-2xl md:text-3xl leading-none">
+              {item.title}
+            </h3>
+            <em className="text-xs sm:text-sm text-secondary/70">{item.tag}</em>
+            <Link
+              aria-label={`Learn more about ${item.title} ceremonies`}
+              href={item.href}
+              className="mt-2 inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-brand-primary hover:underline"
+            >
+              {`Learn more →`}
+            </Link>
           </div>
         </div>
       ))}

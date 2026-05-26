@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { FCC, GCC, CCL, GFB } from "@/lib/s3StaticImages";
 import Image from "next/image";
-import { MoonBlack } from "@/lib/s3StaticImages";
+import { FCC, GCC, CCL, GFB, MoonBlack, NYLogo } from "@/lib/s3StaticImages";
+import { ceremonyLinks, discoverLinks, socialLinks } from "@/lib/site-links";
 import {
   Accordion,
   AccordionContent,
@@ -10,177 +10,160 @@ import {
 } from "./ui/accordian-footer";
 
 export default function Footer() {
-  const links = {
-    discover: [
-      { path: "/", title: "Home" },
-      // { path: "/blog", title: "Blog" },
-      { path: "/contact", title: "Contact" },
-    ],
-    ceremony: [
-      { path: "/funeral", title: "Funeral" },
-      { path: "/wedding", title: "Wedding" },
-      { path: "/naming", title: "Naming" },
-      { path: "/renewal", title: "Renewal" },
-      { path: "/commitment", title: "Commitment" },
-    ],
-    social: [
-      {
-        path: "https://www.facebook.com/moongazerceremonies",
-        title: "Facebook",
-      },
-      {
-        path: "https://www.instagram.com/moongazerceremonies",
-        title: "Instagram",
-      },
-    ],
-  };
-
-  const renderDiscoverLinks = links.discover.map((link, index) => (
-    <li key={index}>
-      <Link aria-label={`Link to ${link.title} page`} href={link.path}>
-        {link.title}
-      </Link>
-    </li>
-  ));
-
-  const renderCeremonyLinks = links.ceremony.map((link, index) => (
-    <li key={index}>
-      <Link
-        aria-label={`Learn more about ${link.title} ceremonies`}
-        href={link.path}
-      >
-        {link.title}
-      </Link>
-    </li>
-  ));
-
-  const renderSocialLinks = links.social.map((link, index) => (
-    <li key={index}>
-      <Link
-        target="_blank"
-        aria-label={`Link to ${link.title} page`}
-        href={link.path}
-      >
-        {link.title}
-      </Link>
-    </li>
-  ));
+  const renderList = (items: readonly { href: string; title: string }[], external = false) =>
+    items.map((link) => (
+      <li key={link.href}>
+        <Link
+          href={link.href}
+          target={external ? "_blank" : undefined}
+          aria-label={`Link to ${link.title}`}
+          className="text-primary/70 hover:text-brand-primary transition-colors"
+        >
+          {link.title}
+        </Link>
+      </li>
+    ));
 
   return (
-    <footer className="flex w-full justify-center bg-primary text-secondary text-sm">
-      <div className="flex flex-col gap-4 justify-between w-full max-w-screen-lg md:flex-row">
-        <div className="flex flex-col gap-4 justify-center text-center md:w-full">
-          <div className="flex gap-4 justify-center md:justify-start">
-            <div className="flex w-8 opacity-60">
-              <Image
-                alt="Hare"
-                src={MoonBlack}
-                height={50}
-                width={50}
-                style={{ objectFit: "contain" }}
-              />
+    <footer className="flex w-full justify-center bg-secondary text-primary">
+      <div className="flex flex-col w-full max-w-screen-xl gap-10 md:gap-12">
+        {/* TOP — brand + nav columns */}
+        <div className="flex flex-col gap-10 md:flex-row md:justify-between md:gap-12">
+          {/* BRAND BLOCK */}
+          <div className="flex flex-col gap-5 md:max-w-sm">
+            <div className="flex items-center gap-3 justify-center md:justify-start">
+              <div className="w-9 opacity-90">
+                <Image
+                  alt="MoonGazer mark"
+                  src={MoonBlack}
+                  height={50}
+                  width={50}
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
+              <p className="font-dancing text-2xl font-bold">MoonGazer Ceremonies</p>
             </div>
-            <div className="flex items-end font-dancing text-secondary text-base font-bold">
-              <p className="text-2xl">MoonGazer Ceremonies</p>
-            </div>
-          </div>
-          <div className="flex justify-center md:justify-start">
-            <em className="text-center max-w-2xl text-xs md:text-left">
-              Serving as a funeral celebrant in <strong>Cambridgeshire</strong>,{" "}
-              <strong>Lincolnshire</strong>, and surrounding areas. Proudly
+            <em className="text-xs leading-relaxed text-primary/70 text-center md:text-left not-italic">
+              Serving as a funeral celebrant in{" "}
+              <strong className="text-primary">Cambridgeshire</strong>,{" "}
+              <strong className="text-primary">Lincolnshire</strong>, and surrounding areas. Proudly
               offering bespoke, compassionate ceremonies tailored to your needs.
             </em>
+            {/* Accreditation badges */}
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2">
+              <div className="w-12 bg-primary/95 rounded-md p-1.5 flex items-center justify-center">
+                <Image
+                  src={GCC}
+                  alt="GCC badge"
+                  height={50}
+                  width={50}
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
+              <div className="w-12 bg-primary/95 rounded-md p-1.5 flex items-center justify-center">
+                <Image
+                  src={GFB}
+                  alt="As seen on Guides for Brides"
+                  height={50}
+                  width={50}
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
+              <div className="w-24 bg-primary/95 rounded-md p-1.5 flex items-center justify-center">
+                <Image
+                  src={CCL}
+                  alt="CCL certification"
+                  height={50}
+                  width={50}
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
+              <div className="w-12 bg-primary/95 rounded-md p-1.5 flex items-center justify-center">
+                <Image
+                  src={FCC}
+                  alt="FCC certification"
+                  height={50}
+                  width={50}
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
+              <div className="w-12 bg-primary/95 rounded-md p-1.5 flex items-center justify-center">
+                <Image
+                  src={NYLogo}
+                  alt="Neal's Yard Remedies independent consultant"
+                  height={50}
+                  width={50}
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
+            </div>
           </div>
-          <div className="flex w-full justify-evenly md:justify-start md:gap-4">
-            <div className="w-12">
-              <Image
-                src={GCC}
-                alt="GCC badge"
-                height={50}
-                width={50}
-                style={{ objectFit: "contain" }}
-              />
-            </div>
-            <div className="w-12">
-              <Image
-                src={GFB}
-                alt="As seen on Guides for Brides"
-                height={50}
-                width={50}
-                style={{ objectFit: "contain" }}
-              />
-            </div>
-            <div className="w-24">
-              <Image
-                src={CCL}
-                alt="CCL certification"
-                height={50}
-                width={50}
-                style={{ objectFit: "contain" }}
-              />
-            </div>
-            <div className="w-12">
-              <Image
-                src={FCC}
-                alt="FCC certification"
-                height={50}
-                width={50}
-                style={{ objectFit: "contain" }}
-              />
-            </div>
+
+          {/* MOBILE NAV (accordions) */}
+          <div className="md:hidden">
+            <nav className="flex flex-col gap-2">
+              <Accordion type="single" collapsible>
+                <AccordionItem value="d">
+                  <AccordionTrigger>Discover</AccordionTrigger>
+                  <AccordionContent asChild>
+                    <ul className="flex flex-col gap-3 pt-3 text-sm">
+                      {renderList(discoverLinks)}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="c">
+                  <AccordionTrigger>Ceremonies</AccordionTrigger>
+                  <AccordionContent asChild>
+                    <ul className="flex flex-col gap-3 pt-3 text-sm">
+                      {renderList(ceremonyLinks)}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="s">
+                  <AccordionTrigger>Social</AccordionTrigger>
+                  <AccordionContent asChild>
+                    <ul className="flex flex-col gap-3 pt-3 text-sm">
+                      {renderList(socialLinks, true)}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </nav>
+          </div>
+
+          {/* DESKTOP NAV */}
+          <div className="hidden md:flex gap-16 text-sm">
+            <nav className="flex flex-col gap-3">
+              <h2 className="font-poppins font-semibold text-[11px] uppercase tracking-[0.18em] text-brand-primary mb-1">
+                Discover
+              </h2>
+              <ul className="flex flex-col gap-2">{renderList(discoverLinks)}</ul>
+            </nav>
+            <nav className="flex flex-col gap-3">
+              <h2 className="font-poppins font-semibold text-[11px] uppercase tracking-[0.18em] text-brand-primary mb-1">
+                Ceremonies
+              </h2>
+              <ul className="flex flex-col gap-2">{renderList(ceremonyLinks)}</ul>
+            </nav>
+            <nav className="flex flex-col gap-3">
+              <h2 className="font-poppins font-semibold text-[11px] uppercase tracking-[0.18em] text-brand-primary mb-1">
+                Social
+              </h2>
+              <ul className="flex flex-col gap-2">{renderList(socialLinks, true)}</ul>
+            </nav>
           </div>
         </div>
 
-        {/* mobile nav */}
-        <div className="md:hidden">
-          <nav className="flex flex-col gap-4">
-            <Accordion type="single" collapsible>
-              <AccordionItem value="item-1">
-                <AccordionTrigger>Discover</AccordionTrigger>
-                <AccordionContent asChild>
-                  <ul className="flex flex-col justify-center text-sm gap-4 pt-4">
-                    {renderDiscoverLinks}
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-            <Accordion type="single" collapsible>
-              <AccordionItem value="item-1">
-                <AccordionTrigger>Ceremonies</AccordionTrigger>
-                <AccordionContent asChild>
-                  <ul className="flex flex-col justify-center text-sm gap-4 pt-4">
-                    {renderCeremonyLinks}
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-            <Accordion type="single" collapsible>
-              <AccordionItem value="item-1">
-                <AccordionTrigger>Social</AccordionTrigger>
-                <AccordionContent asChild>
-                  <ul className="flex flex-col justify-center text-sm gap-4 pt-4">
-                    {renderSocialLinks}
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </nav>
-        </div>
-
-        {/* desktop nav */}
-        <div className="hidden md:flex gap-8 justify-between md:w-full md:justify-end text-center">
-          <nav>
-            <h1 className="font-bold mb-2 text-lg font-raleway">Discover</h1>
-            <ul className="flex flex-col">{renderDiscoverLinks}</ul>
-          </nav>
-          <nav>
-            <h1 className="font-bold mb-2 text-lg font-raleway">Ceremonies</h1>
-            <ul className="flex flex-col">{renderCeremonyLinks}</ul>
-          </nav>
-          <nav>
-            <h1 className="font-bold mb-2 text-lg font-raleway">Social</h1>
-            <ul className="flex flex-col">{renderSocialLinks}</ul>
-          </nav>
+        {/* BOTTOM BAR */}
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 pt-6 border-t border-primary/10 text-xs text-primary/50 text-center md:text-left">
+          <span>
+            © {new Date().getFullYear()} MoonGazer Ceremonies · Dee Robinson, Independent Celebrant
+          </span>
+          <span>South Lincolnshire & Cambridgeshire</span>
         </div>
       </div>
     </footer>
