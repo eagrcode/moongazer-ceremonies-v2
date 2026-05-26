@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function RenewalPage() {
   const data = {
     title: "Vow Renewal",
-    tag: "relive the Love!",
+    tag: "Relive the love",
     description: {
       introduction: [
         `This is the perfect way to celebrate your special anniversary and relive your wedding all over again. We can work together to create a personal ceremony either repeating your original vows or making new ones.`,
@@ -23,16 +23,13 @@ export default function RenewalPage() {
       "A beautifully presented souvenir script as a keepsake of the day",
       "All meetings, email and phone contact",
     ],
+    pricing: [{ label: "Vow renewal", price: "From £300", note: "Bespoke packages" }],
+    ctaCopy: `Tell me about the day you'd like to relive — I'll help you shape something just as meaningful the second time around.`,
   };
 
   return (
     <main className="relative flex w-full flex-col items-center">
-      <Ceremony
-        title={data.title}
-        tag={data.tag}
-        description={data.description}
-        included={data.included}
-      />
+      <Ceremony {...data} />
     </main>
   );
 }

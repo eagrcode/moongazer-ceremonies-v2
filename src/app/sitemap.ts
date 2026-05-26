@@ -10,12 +10,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "hourly",
       priority: 1,
     },
-    {
-      url: `${baseURL}/wedding`,
-      lastModified: new Date(),
-      changeFrequency: "hourly",
-      priority: 1,
-    },
+    // {
+    //   url: `${baseURL}/wedding`,
+    //   lastModified: new Date(),
+    //   changeFrequency: "hourly",
+    //   priority: 1,
+    // },
     {
       url: `${baseURL}/renewal`,
       lastModified: new Date(),

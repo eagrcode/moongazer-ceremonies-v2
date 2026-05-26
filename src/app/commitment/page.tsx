@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 export default function CommitmentPage() {
   const data = {
     title: "Commitment",
-    tag: "commited in Love and Life",
+    tag: "Committed in love and life",
     description: {
       introduction: [
         `If you would like to celebrate your life-long commitment to each other, without the legalities, this is the ceremony for you. A commitment or affirmation ceremony allows you to declare your love and commitment to each other in front of your friends and family.`,
-        `The sky’s the limit, you can include whatever is right for you both. I will meet with you to chat through your ideas and thoughts, and make sure that your ceremony is a clear reflection of you and your relationship.`,
+        `The sky's the limit, you can include whatever is right for you both. I will meet with you to chat through your ideas and thoughts, and make sure that your ceremony is a clear reflection of you and your relationship.`,
         `These ceremonies are a wonderful way of reflecting your unconditional love and dedication to each other.`,
       ],
     },
@@ -25,16 +25,13 @@ export default function CommitmentPage() {
       "A beautifully presented souvenir script as a keepsake of the day",
       "All meetings, email and phone contact",
     ],
+    pricing: [{ label: "Commitment ceremony", price: "From £450", note: "Bespoke packages" }],
+    ctaCopy: `Let's craft a celebration of your love that reflects exactly who you are, together.`,
   };
 
   return (
     <main className="relative flex w-full flex-col items-center">
-      <Ceremony
-        title={data.title}
-        tag={data.tag}
-        description={data.description}
-        included={data.included}
-      />
+      <Ceremony {...data} />
     </main>
   );
 }

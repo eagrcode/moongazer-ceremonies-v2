@@ -1,81 +1,53 @@
 "use client";
 
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
-import { HareNavy } from "@/lib/s3StaticImages";
-import Image from "next/image";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import ImageGrid from "./image-grid";
 import { motion } from "framer-motion";
+import { FaStar } from "react-icons/fa";
 
-const testimonials = [
+const quotes = [
   {
-    id: 0,
-    text: `Dee shows empathy and sensitivity in all she does, and her life experience helps to guide people through both happy and sad times. I can’t imagine anyone better suited to the role of a celebrant, and would thoroughly recommend her services.`,
-    author: `J. Maddern`,
+    text: "Dee gave us the most beautiful, personal ceremony — every word felt like it was written just for our family.",
+    who: "Sarah & James",
+    ceremony: "Vow Renewal",
   },
   {
-    id: 1,
-    text: `Personally, I couldn’t think of a more lovely person to act as a celebrant at a wedding, nor a more empathetic, sensitive or caring person to conduct a funeral. She truly guides those around her through life with wisdom and love.`,
-    author: `S. Macdonald`,
+    text: "A calm, gentle hand at the most difficult time. We will be forever grateful for the care she gave us.",
+    who: "The Pearson family",
+    ceremony: "Funeral",
   },
   {
-    id: 2,
-    text: `Amazing service. You really helped me before, during and after our special day. Can’t recommend highly enough.`,
-    author: `V. Fraser`,
-  },
-  {
-    id: 3,
-    text: `We would highly recommend Dee to anyone we know; she really made the effort to get to know us as much as possible and to make sure that we were completely happy with everything.`,
-    author: `Nick & Laura`,
+    text: "She made it ours. Genuinely the kindest, most thoughtful person to guide you through a day like this.",
+    who: "Olivia & Tom",
+    ceremony: "Commitment",
   },
 ];
 
 export default function Testimonials() {
   return (
-    <section className="flex gap-8 w-full justify-center bg-secondary text-primary">
-      <div className="flex flex-col gap-8 items-center justify-center w-full max-w-screen-lg">
-        <motion.div
-          viewport={{ once: true }}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 2 }}
-          className="relative flex w-full max-w-screen-md"
-        >
-          <Swiper
-            className="items-center"
-            modules={[Autoplay, Pagination]}
-            slidesPerView={1}
-            loop={true}
-            autoplay={{ delay: 5000, disableOnInteraction: false }}
-          >
-            {testimonials.map((item) => (
-              <SwiperSlide key={item.id}>
-                <div className="flex flex-col items-center justify-center text-center gap-4 md:text-2xl">
-                  <em>
-                    <q>{item.text}</q>
-                  </em>
-                  <p className="opacity-50">- {item.author}</p>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          <div className="flex w-8 absolute bottom-4 right-4">
-            <Image
-              src={HareNavy}
-              alt={"Hare"}
-              height={50}
-              width={50}
-              style={{ objectFit: "contain" }}
-            />
+    <section className="flex w-full justify-center bg-primary2 border-y border-secondary/10 py-12 px-6 sm:px-8 md:px-12 lg:px-16">
+      <motion.div
+        viewport={{ once: true }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 w-full max-w-screen-xl"
+      >
+        {quotes.map((q, i) => (
+          <div key={i} className="flex flex-col gap-4 text-secondary">
+            <div className="flex gap-1 text-brand-primary">
+              {[0, 1, 2, 3, 4].map((s) => (
+                <FaStar key={s} size={14} />
+              ))}
+            </div>
+            <p className="text-[15px] leading-relaxed">{q.text}</p>
+            <div className="flex flex-col gap-0.5 mt-auto pt-2">
+              <span className="text-sm font-semibold tracking-wide">{q.who}</span>
+              <span className="text-[11px] uppercase tracking-[0.18em] text-secondary/60">
+                {q.ceremony}
+              </span>
+            </div>
           </div>
-        </motion.div>
-
-        <ImageGrid />
-      </div>
+        ))}
+      </motion.div>
     </section>
   );
 }

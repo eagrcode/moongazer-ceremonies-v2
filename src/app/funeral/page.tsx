@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function FuneralPage() {
   const data = {
     title: "Funeral",
-    tag: "a celebration of life",
+    tag: "A celebration of life",
     description: {
       introduction: [
         `After the loss of a loved one, planning a funeral can feel quite daunting. As a trained grief counsellor, I understand the range of emotions that family and friends experience. I can guide and support you through this very difficult time with compassion and kindness.`,
@@ -30,18 +30,15 @@ export default function FuneralPage() {
           content: [
             `The interment or scattering of your loved one's ashes usually occurs some days, weeks, or months after the cremation service. For this occasion, you may decide upon a small ceremony.`,
             `These ceremonies can be held almost anywhere: the cemetery gardens, the woods, or even your own backyard. Permission may be required in certain circumstances and locations.`,
-            `Once again, the choices are yours, and I will work with you to provide a fitting and dignified ceremony`,
+            `Once again, the choices are yours, and I will work with you to provide a fitting and dignified ceremony.`,
           ],
         },
         {
           title: "Memorial or Celebration of Life Ceremonies",
           content: [
             `A Memorial or Celebration of Life ceremony usually takes place after the formal funeral service. It can be held a week or a year later, or it can mark a special date significant to you and your loved one.`,
-
             `The ceremony can be held anywhere. Many people choose locations with personal significance, such as a beach, a park, or the family home. Any location or venue is a potential option.`,
-
             `It provides an ideal opportunity for family and friends, who may not have been able to attend the funeral, to gather and reminisce.`,
-
             `My role can range from helping you shape the content of the ceremony to acting as your master of ceremonies on the day.`,
           ],
         },
@@ -51,7 +48,7 @@ export default function FuneralPage() {
             `Have you ever considered what you would like said at your own funeral?`,
             `Where would you want it to be held? What music would you prefer? Hymns or pop songs? Bagpipes or a rock band? Which readings or poems would you include?`,
             `It can be comforting to know that your family is aware of your preferences, and that you've eased their burden by making these decisions in advance.`,
-            `We all have stories to share about our lives. They form part of the legacy we leave behind. I can assist you in articulating your story and choices. These can then be paired with your will or entrusted to a family member. This ensures that when the time comes, no one is left wondering, "I don’t know what they wanted."`,
+            `We all have stories to share about our lives. They form part of the legacy we leave behind. I can assist you in articulating your story and choices. These can then be paired with your will or entrusted to a family member. This ensures that when the time comes, no one is left wondering, "I don't know what they wanted."`,
           ],
         },
       ],
@@ -64,17 +61,16 @@ export default function FuneralPage() {
       "Presentation script given after the funeral",
       "Scattering of Ashes Ceremony",
     ],
+    pricing: [
+      { label: "Funeral service", price: "£235", note: "Fixed fee" },
+      { label: "Scattering of ashes", price: "£150", note: "Standalone ceremony" },
+    ],
+    ctaCopy: `Whether you're planning ahead or supporting someone through loss, every conversation starts gently and without obligation.`,
   };
 
   return (
     <main className="relative flex w-full flex-col items-center">
-      <Ceremony
-        title={data.title}
-        tag={data.tag}
-        description={data.description}
-        included={data.included}
-        isFuneral={true}
-      />
+      <Ceremony {...data} />
     </main>
   );
 }

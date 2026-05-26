@@ -7,10 +7,11 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { FaInstagram } from "react-icons/fa";
 import { FaSquareFacebook } from "react-icons/fa6";
-import { FaChevronDown, FaChevronLeft } from "react-icons/fa";
+import { FaChevronDown } from "react-icons/fa";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { IoCloseOutline } from "react-icons/io5";
 import { MoonWhite, MoonBlack } from "@/lib/s3StaticImages";
+import { ceremonyLinks } from "@/lib/site-links";
 
 import {
   DropdownMenu,
@@ -31,14 +32,6 @@ export default function Navbar() {
   const path = usePathname();
 
   const isActive = (href: string) => path === href;
-
-  const ceremonyLinks = [
-    { id: 0, title: "Wedding", href: "/wedding" },
-    { id: 1, title: "Renewal", href: "/renewal" },
-    { id: 2, title: "Commitment", href: "/commitment" },
-    { id: 3, title: "Naming", href: "/naming" },
-    { id: 4, title: "Funeral", href: "/funeral" },
-  ];
 
   useEffect(() => {
     if (showMobMenu) {
@@ -66,37 +59,35 @@ export default function Navbar() {
                 style={{ objectFit: "contain" }}
               />
             </div>
-            <div
-              className="md:hidden"
-              onClick={() => setShowMobMenu((prev) => !prev)}
-            >
+            <div className="md:hidden" onClick={() => setShowMobMenu((prev) => !prev)}>
               <BiMenuAltLeft size={40} />
             </div>
+          </div>
+
+          <div className="flex gap-4">
             <nav className="hidden md:flex">
               <ul className="flex items-center gap-4">
                 <li
                   className={`${
-                    isActive("/")
-                      ? "text-gray-950 border-b-2 border-b-gray-950"
-                      : ""
+                    isActive("/") ? "text-gray-950 border-b-2 border-b-gray-950" : ""
                   } ease-in duration-100 hover:text-gray-950 px-1 flex justify-center items-center`}
                 >
-                  <Link href={"/"}>HOME</Link>
+                  <Link href={"/"}>Home</Link>
                 </li>
                 <DropdownMenu modal={false}>
                   <DropdownMenuTrigger asChild>
                     <li className="flex items-center gap-1 cursor-pointer ease-in duration-100 hover:text-gray-950">
-                      <button>CEREMONIES</button>
+                      <button>Ceremonies</button>
                       <FaChevronDown className="font-extralight" size={15} />
                     </li>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
-                    {ceremonyLinks.map((link, index) => (
-                      <DropdownMenuItem key={index}>
+                    {ceremonyLinks.map((link) => (
+                      <DropdownMenuItem key={link.href}>
                         <Link
                           aria-label={`Learn more about ${link.title} ceremonies`}
-                          className="w-full"
                           href={link.href}
+                          className="w-full"
                         >
                           {link.title}
                         </Link>
@@ -106,28 +97,31 @@ export default function Navbar() {
                 </DropdownMenu>
                 <li
                   className={`${
-                    isActive("/contact")
+                    isActive("/remedies-rituals")
                       ? "text-gray-950 border-b-2 border-b-gray-950"
                       : ""
                   } ease-in duration-100 hover:text-gray-950 flex justify-center items-center`}
                 >
-                  <Link href={"/contact"}>CONTACT</Link>
+                  <Link href={"/remedies-rituals"}>Remedies & Rituals</Link>
                 </li>
                 <li
                   className={`${
-                    isActive("/blog")
-                      ? "text-gray-950 border-b-2 border-b-gray-950"
-                      : ""
+                    isActive("/contact") ? "text-gray-950 border-b-2 border-b-gray-950" : ""
+                  } ease-in duration-100 hover:text-gray-950 flex justify-center items-center`}
+                >
+                  <Link href={"/contact"}>Contact</Link>
+                </li>
+                <li
+                  className={`${
+                    isActive("/blog") ? "text-gray-950 border-b-2 border-b-gray-950" : ""
                   } ease-in duration-100 hover:text-gray-950 px-1 flex justify-center items-center`}
                 >
-                  <Link href={"/blog"}>BLOG</Link>
+                  <Link href={"/blog"}>Blog</Link>
                 </li>
               </ul>
             </nav>
-          </div>
-
-          <div className="flex gap-4 items-center">
-            <Link
+            <div className="flex gap-4 items-center">
+              {/* <Link
               aria-label="Link to Instagram page"
               href={"https://www.instagram.com/moongazerceremonies"}
               target="_blank"
@@ -136,17 +130,18 @@ export default function Navbar() {
                 className="hidden ease-in duration-100 hover:text-gray-950 cursor-pointer md:block"
                 size={30}
               />
-            </Link>
-            <Link
-              aria-label="Link to Facebook page"
-              href={"https://www.facebook.com/moongazerceremonies"}
-              target="_blank"
-            >
-              <FaSquareFacebook
-                className="hidden ease-in duration-100 hover:text-gray-950 cursor-pointer md:block"
-                size={30}
-              />
-            </Link>
+            </Link> */}
+              <Link
+                aria-label="Link to Facebook page"
+                href={"https://www.facebook.com/moongazerceremonies"}
+                target="_blank"
+              >
+                <FaSquareFacebook
+                  className="hidden ease-in duration-100 hover:text-gray-950 cursor-pointer md:block"
+                  size={30}
+                />
+              </Link>
+            </div>
           </div>
         </div>
         {showMobMenu && (
@@ -157,10 +152,7 @@ export default function Navbar() {
             className="md:hidden flex flex-col w-full items-center justify-center absolute h-dvh top-0 p-4 bg-secondary text-primary z-10"
           >
             <div className="flex w-full justify-between absolute top-0 p-4">
-              <button
-                className="text-primary"
-                onClick={() => setShowMobMenu((prev) => !prev)}
-              >
+              <button className="text-primary" onClick={() => setShowMobMenu((prev) => !prev)}>
                 <IoCloseOutline size={40} />
               </button>
               <div className="flex w-10 opacity-60">
@@ -185,11 +177,8 @@ export default function Navbar() {
                       <AccordionTrigger>CEREMONIES</AccordionTrigger>
                       <AccordionContent asChild>
                         <ul className="flex flex-col items-center justify-center text-base text-primary/80 gap-4 pt-4">
-                          {ceremonyLinks.map((link, index) => (
-                            <li
-                              onClick={() => setShowMobMenu((prev) => !prev)}
-                              key={index}
-                            >
+                          {ceremonyLinks.map((link) => (
+                            <li onClick={() => setShowMobMenu((prev) => !prev)} key={link.href}>
                               <Link
                                 aria-label={`Learn more about ${link.title} ceremonies`}
                                 href={link.href}

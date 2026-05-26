@@ -1,4 +1,3 @@
-import Ceremony from "@/components/ceremony";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -32,12 +31,12 @@ export default function WeddingPage() {
 
   return (
     <main className="relative flex w-full flex-col items-center">
-      <Ceremony
+      {/* <Ceremony
         title={data.title}
         tag={data.tag}
         description={data.description}
         included={data.included}
-      />
+      /> */}
     </main>
   );
 }

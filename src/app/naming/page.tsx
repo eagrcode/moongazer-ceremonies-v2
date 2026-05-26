@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function NamingPage() {
   const data = {
     title: "Naming Ceremony",
-    tag: "what's in a Name?",
+    tag: "What's in a name?",
     description: {
       introduction: [
         `If you want to celebrate your new arrival with your family and friends, this is the perfect non-religious way to welcome a new member into your family. It might be to welcome a baby into the world or a newly adopted child into your family. We will work together to create a unique ceremony which may include readings and symbolic gestures. You can include godparents, guide parents or guardians who will promise to love and support your child during the ceremony.`,
@@ -23,16 +23,13 @@ export default function NamingPage() {
       "A beautifully presented souvenir script as a keepsake of the day",
       "All meetings, email and phone contact",
     ],
+    pricing: [{ label: "Naming ceremony", price: "From £250", note: "Bespoke packages" }],
+    ctaCopy: `Let's create a warm, joyful welcome for your little one — written entirely around your family.`,
   };
 
   return (
     <main className="relative flex w-full flex-col items-center">
-      <Ceremony
-        title={data.title}
-        tag={data.tag}
-        description={data.description}
-        included={data.included}
-      />
+      <Ceremony {...data} />
     </main>
   );
 }
