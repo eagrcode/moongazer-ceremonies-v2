@@ -175,17 +175,10 @@ export default function Ceremony({
               <p>
                 Prefer to talk first? Email{" "}
                 <a
-                  href="mailto:hello@moongazerceremonies.co.uk"
+                  href="mailto:contact@moongazerceremonies.co.uk"
                   className="text-brand-primary font-semibold break-all hover:underline"
                 >
-                  hello@moongazerceremonies.co.uk
-                </a>{" "}
-                or call{" "}
-                <a
-                  href="tel:+447700900000"
-                  className="text-secondary font-semibold hover:underline"
-                >
-                  07700 900 000
+                  contact@moongazerceremonies.co.uk
                 </a>
                 .
               </p>

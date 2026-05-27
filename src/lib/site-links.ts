@@ -50,6 +50,13 @@ export const discoverLinks = [
   { title: "Contact", href: "/contact" },
 ] as const;
 
+export const navbarLinks = [
+  { title: "Home", href: "/" },
+  { title: "Remedies & Rituals", href: "/remedies-rituals" },
+  { title: "Blog", href: "/blog" },
+  { title: "Contact", href: "/contact" },
+] as const;
+
 export const socialLinks = [
   { title: "Facebook", href: "https://www.facebook.com/moongazerceremonies" },
 ] as const;

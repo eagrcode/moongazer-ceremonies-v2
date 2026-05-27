@@ -1,9 +1,3 @@
-// src/components/why.tsx
-// Changes from current:
-//  - 4 distinct icons (was 1 flower + 3 hearts)
-//  - Each item is now a card with icon-in-circle + title + body copy
-//  - Removes the JumpImage from inside this section (move/keep separately
-//    if you still want it elsewhere — see homepage page.tsx)
 "use client";
 
 import { motion } from "framer-motion";
@@ -45,34 +39,42 @@ export default function Why() {
           transition={{ duration: 2 }}
           className="flex flex-col gap-12 items-center w-full max-w-screen-xl"
         >
-          {/* TITLE */}
-          <div className="flex w-full justify-center items-center text-center gap-2 sm:gap-4">
-            <div className="hidden sm:block h-[1px] w-full bg-brand-primary max-w-[80px] md:max-w-[150px]"></div>
-            <h2 className="font-dancing text-3xl md:text-4xl font-bold text-center whitespace-normal">
-              Why Choose a Celebrant?
-            </h2>
-            <div className="hidden sm:block h-[1px] w-full bg-brand-primary max-w-[80px] md:max-w-[150px]"></div>
-          </div>
-
-          {/* CARDS */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full">
-            {items.map(({ Icon, title, body }) => (
-              <div
-                key={title}
-                className="flex flex-col gap-3 p-5 md:p-6 bg-primary rounded-md border border-secondary/10"
-              >
-                <span className="flex items-center justify-center w-11 h-11 rounded-full bg-brand-primary/15 text-brand-primary">
-                  <Icon size={24} />
-                </span>
-                <h3 className="font-poppins font-semibold text-base text-secondary tracking-wide">
-                  {title}
-                </h3>
-                <p className="text-sm text-secondary/70 leading-relaxed">{body}</p>
-              </div>
-            ))}
-          </div>
+          <Title />
+          <Cards />
         </motion.div>
       </div>
     </section>
+  );
+}
+
+function Title() {
+  return (
+    <div className="flex w-full justify-center items-center text-center gap-2 sm:gap-4">
+      <div className="hidden sm:block h-[1px] w-full bg-brand-primary max-w-[80px] md:max-w-[150px]"></div>
+      <h2 className="font-dancing text-3xl md:text-4xl font-bold text-center whitespace-normal">
+        Why Choose a Celebrant?
+      </h2>
+      <div className="hidden sm:block h-[1px] w-full bg-brand-primary max-w-[80px] md:max-w-[150px]"></div>
+    </div>
+  );
+}
+
+function Card({ Icon, title, body }: { Icon: React.ElementType; title: string; body: string }) {
+  return (
+    <div className="flex flex-col items-center gap-4 text-center max-w-sm">
+      <Icon className="text-4xl md:text-5xl text-brand-primary" />
+      <h3 className="font-semibold text-xl md:text-2xl">{title}</h3>
+      <p className="text-secondary/90">{body}</p>
+    </div>
+  );
+}
+
+function Cards() {
+  return (
+    <div className="flex flex-col md:flex-row gap-8 md:gap-12 w-full justify-center items-center">
+      {items.map((item, index) => (
+        <Card key={index} Icon={item.Icon} title={item.title} body={item.body} />
+      ))}
+    </div>
   );
 }
