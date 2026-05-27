@@ -2,8 +2,9 @@ import ContactForm from "@/components/contact-form";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { HareWhite } from "@/lib/s3StaticImages";
-import { HiMail, HiPhone, HiLocationMarker } from "react-icons/hi";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { socialLinks } from "@/lib/site-links";
+import { HiMail, HiLocationMarker } from "react-icons/hi";
+import { FaFacebookF } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: "Contact - MoonGazer Ceremonies",
@@ -18,14 +19,8 @@ export default function ContactPage() {
     {
       Icon: HiMail,
       label: "Email",
-      value: "hello@moongazerceremonies.co.uk",
-      href: "mailto:hello@moongazerceremonies.co.uk",
-    },
-    {
-      Icon: HiPhone,
-      label: "Phone",
-      value: "07700 900 000",
-      href: "tel:+447700900000",
+      value: "contact@moongazerceremonies.co.uk",
+      href: "mailto:contact@moongazerceremonies.co.uk",
     },
     {
       Icon: HiLocationMarker,
@@ -111,24 +106,18 @@ export default function ContactPage() {
                 Follow along
               </span>
               <div className="flex gap-3">
-                <a
-                  href="https://www.facebook.com/moongazerceremonies"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 hover:bg-brand-primary hover:text-secondary transition-colors"
-                >
-                  <FaFacebookF size={14} />
-                </a>
-                <a
-                  href="https://www.instagram.com/moongazerceremonies"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 hover:bg-brand-primary hover:text-secondary transition-colors"
-                >
-                  <FaInstagram size={15} />
-                </a>
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={link.title}
+                    className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 hover:bg-brand-primary hover:text-secondary transition-colors"
+                  >
+                    <FaFacebookF size={14} />
+                  </a>
+                ))}
               </div>
             </div>
           </aside>
